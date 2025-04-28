@@ -1,0 +1,82 @@
+.cd-nav-trigger {
+    position: fixed;
+    top: 30px;
+    right: 5%;
+    z-index: 999;
+    height: 54px;
+    width: 54px;
+    background: transparent;
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  
+  .cd-nav-trigger .cd-nav-icon {
+    position: absolute;
+    height: 4px;
+    width: 24px;
+    background: #656e79;
+    left: 50%;
+    top: 50%;
+    margin-left: -12px;
+    margin-top: -2px;
+  }
+  
+  .cd-nav-trigger .cd-nav-icon::before,
+  .cd-nav-trigger .cd-nav-icon::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    height: 4px;
+    width: 24px;
+    background: inherit;
+  }
+  
+  .cd-nav-trigger .cd-nav-icon::before {
+    top: -8px;
+  }
+  
+  .cd-nav-trigger .cd-nav-icon::after {
+    bottom: -8px;
+  }
+  
+  .cd-nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+    z-index: 998;
+    overflow: auto;
+    transition: right 0.4s;
+  }
+  
+  .cd-nav.open {
+    right: 0;
+  }
+  
+  .cd-navigation-wrapper {
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .cd-half-block {
+    width: 50%;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .cd-primary-nav li a {
+    display: block;
+    padding: 10px 0;
+    font-size: 24px;
+    text-decoration: none;
+    color: #333;
+  }
+  
+  .cd-contact-info li {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
