@@ -1,21 +1,131 @@
-body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Quicksand', sans-serif;
-    background: #000000; /* Fondo negro provisorio */
-    color: white;
-    text-align: center;
-  }
-  
-  header {
-    padding: 100px 20px;
-  }
-  
-  h1 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 40px;
-  }
-  
-  p {
-    font-size: 20px;
-  }
+/* General */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+  color: #333;
+  background-color: #000; /* Fondo negro inicial */
+}
+
+/* Contenedores principales */
+.contenedor {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Header del menú lateral */
+.cd-nav-trigger {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1001;
+  display: block;
+  text-decoration: none;
+  color: #fff;
+}
+
+/* Menú lateral */
+.cd-nav {
+  position: fixed;
+  top: 0;
+  left: -300px;
+  width: 300px;
+  height: 100%;
+  background: #222;
+  transition: left 0.4s ease;
+  z-index: 1000;
+}
+
+.cd-nav.open {
+  left: 0;
+}
+
+/* Fondo animado */
+#particles-js {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 0;
+}
+
+/* Home */
+.contenedor.home section {
+  position: relative;
+  z-index: 1;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hint {
+  text-align: center;
+  cursor: pointer;
+}
+
+/* Botones principales (Análisis, Comunicación, Medición) */
+.botones {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  padding: 0;
+}
+
+.botones li {
+  margin: 0 15px;
+}
+
+.botones li a {
+  color: white;
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Textos de cada sección */
+.textos {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.textos li {
+  display: none;
+}
+
+.textos li.active {
+  display: block;
+  color: white;
+}
+
+/* Servicios */
+.contenedor.servicios ul {
+  list-style: none;
+  padding: 0;
+}
+
+.contenedor.servicios li {
+  margin: 20px;
+  background: #333;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Powered By */
+.contenedor.powered {
+  text-align: center;
+  background: #111;
+  color: white;
+  padding: 40px 0;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #111;
+  color: white;
+}
