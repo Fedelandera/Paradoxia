@@ -1,131 +1,85 @@
-/* General */
-body, html {
+/* Tipografías base */
+body {
+  font-family: 'Montserrat', sans-serif;
   margin: 0;
   padding: 0;
-  font-family: 'Montserrat', sans-serif;
+  background-color: #fff;
   color: #333;
-  background-color: #000; /* Fondo negro inicial */
 }
 
-/* Contenedores principales */
-.contenedor {
-  width: 100%;
-  min-height: 100vh;
-  position: relative;
-  overflow: hidden;
+h1, h2, h3, .boton {
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
-/* Header del menú lateral */
-.cd-nav-trigger {
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  z-index: 1001;
-  display: block;
+a {
+  color: inherit;
   text-decoration: none;
-  color: #fff;
 }
 
-/* Menú lateral */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+/* Estilos para el menú lateral */
 .cd-nav {
   position: fixed;
-  top: 0;
-  left: -300px;
   width: 300px;
-  height: 100%;
-  background: #222;
-  transition: left 0.4s ease;
+  top: 0;
+  bottom: 0;
+  left: -300px;
+  background-color: #111;
+  overflow-y: auto;
   z-index: 1000;
+  transition: left 0.3s ease;
 }
 
 .cd-nav.open {
   left: 0;
 }
 
-/* Fondo animado */
-#particles-js {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  z-index: 0;
-}
-
-/* Home */
-.contenedor.home section {
-  position: relative;
-  z-index: 1;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.hint {
-  text-align: center;
-  cursor: pointer;
-}
-
-/* Botones principales (Análisis, Comunicación, Medición) */
-.botones {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  margin-top: 30px;
-  padding: 0;
-}
-
-.botones li {
-  margin: 0 15px;
-}
-
-.botones li a {
-  color: white;
-  text-decoration: none;
-  font-size: 24px;
-  font-weight: bold;
-}
-
-/* Textos de cada sección */
-.textos {
-  list-style: none;
-  padding: 0;
-  margin-top: 20px;
-}
-
-.textos li {
-  display: none;
-}
-
-.textos li.active {
-  display: block;
-  color: white;
-}
-
-/* Servicios */
-.contenedor.servicios ul {
-  list-style: none;
-  padding: 0;
-}
-
-.contenedor.servicios li {
-  margin: 20px;
-  background: #333;
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-/* Powered By */
-.contenedor.powered {
-  text-align: center;
-  background: #111;
-  color: white;
-  padding: 40px 0;
-}
-
-/* Footer */
-footer {
-  text-align: center;
+.cd-nav .cd-navigation-wrapper {
   padding: 20px;
-  background: #111;
-  color: white;
+}
+
+.cd-nav .cd-primary-nav li a {
+  display: block;
+  padding: 10px 0;
+  font-weight: bold;
+  color: #fff;
+}
+
+/* Botón para abrir el menú */
+.cd-nav-trigger {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1100;
+  display: flex;
+  align-items: center;
+  color: #333;
+  background: transparent;
+  border: none;
+  font-size: 16px;
+}
+
+/* Estilos para botones con íconos */
+.button_socials {
+  display: inline-block;
+  font-size: 20px;
+  margin: 0 5px;
+}
+
+.button_socials.tw::before {
+  content: "\\f099"; /* Font Awesome Twitter */
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+}
+
+.button_socials.linkedin::before {
+  content: "\\f08c"; /* Font Awesome LinkedIn */
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
 }
