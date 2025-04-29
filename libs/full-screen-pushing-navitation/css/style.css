@@ -1,183 +1,123 @@
-/* -------------------------------- 
+/* FULL SCREEN PUSHING NAVIGATION */
 
-Primary style
-
--------------------------------- */
+/* Botón de apertura del menú */
 .cd-nav-trigger {
-    position: fixed;
-    z-index: 10;
-    bottom: 40px;
-    right: 40px;
-    height: 54px;
-    width: 54px;
-    border-radius: 50%;
-    background: #ffffff;
-    overflow: hidden;
-    white-space: nowrap;
-    color: transparent;
-    pointer-events: auto;
-    text-indent: 100%;
-    direction: rtl;
-  }
-  
-  .cd-nav-trigger span, .cd-nav-trigger span::after, .cd-nav-trigger span::before {
-    /* this is the hamburger icon */
-    position: absolute;
-    width: 16px;
-    height: 2px;
-    background-color: #656e79;
-  }
-  
-  .cd-nav-trigger span {
-    left: 50%;
-    top: 50%;
-    margin-left: -8px;
-    margin-top: -1px;
-    transition: background-color 0.3s;
-  }
-  
-  .cd-nav-trigger span::before, .cd-nav-trigger span::after {
-    content: '';
-    left: 0;
-    transition: transform 0.3s;
-  }
-  
-  .cd-nav-trigger span::before {
-    transform: translateY(-6px);
-  }
-  
-  .cd-nav-trigger span::after {
-    transform: translateY(6px);
-  }
-  
-  /* svg circle animation */
-  .cd-nav-trigger svg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 54px;
-    width: 54px;
-    transform: rotate(-90deg);
-    pointer-events: none;
-  }
-  
-  .cd-nav-trigger circle {
-    fill: none;
-    stroke: #656e79;
-    stroke-width: 2;
-    stroke-dasharray: 157 157;
-    stroke-dashoffset: 157;
-    transition: stroke-dashoffset 0.4s;
-  }
-  
-  /* when navigation is visible */
-  .cd-nav-trigger.nav-is-visible span {
-    background-color: transparent;
-  }
-  
-  .cd-nav-trigger.nav-is-visible span::before {
-    transform: rotate(45deg);
-  }
-  
-  .cd-nav-trigger.nav-is-visible span::after {
-    transform: rotate(-45deg);
-  }
-  
-  .cd-nav-trigger.nav-is-visible circle {
+  position: fixed;
+  top: 30px;
+  left: 30px;
+  width: 50px;
+  height: 50px;
+  background: #333;
+  border-radius: 50%;
+  z-index: 9999;
+  cursor: pointer;
+}
+.cd-nav-trigger span, .cd-nav-trigger .cd-nav-icon {
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.cd-nav-trigger .cd-nav-icon {
+  width: 24px;
+  height: 2px;
+  background: #fff;
+  transition: all 0.3s ease;
+}
+.cd-nav-trigger .cd-nav-icon::before,
+.cd-nav-trigger .cd-nav-icon::after {
+  content: '';
+  position: absolute;
+  width: 24px;
+  height: 2px;
+  background: #fff;
+  transition: all 0.3s ease;
+}
+.cd-nav-trigger .cd-nav-icon::before {
+  transform: translateY(-8px);
+}
+.cd-nav-trigger .cd-nav-icon::after {
+  transform: translateY(8px);
+}
+
+/* Menú lateral */
+.cd-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 300px;
+  background: #222;
+  transform: translateX(-100%);
+  transition: transform 0.5s ease;
+  z-index: 9998;
+  overflow-y: auto;
+}
+.cd-nav.is-visible {
+  transform: translateX(0);
+}
+
+/* Navegación interna */
+.cd-navigation-wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 50px 30px;
+}
+.cd-half-block.principal nav ul.links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.cd-half-block.principal nav ul.links li.item {
+  margin-bottom: 20px;
+}
+.cd-half-block.principal nav ul.links li.item a {
+  color: #fff;
+  font-size: 18px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+.cd-half-block.principal nav ul.links li.item a:hover {
+  color: #aaa;
+}
+
+/* Información de contacto */
+.cd-half-block.secundario address {
+  margin-top: 30px;
+}
+.cd-contact-info {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.cd-contact-info li {
+  color: #ccc;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+.cd-contact-info li a {
+  color: #ccc;
+  text-decoration: none;
+}
+.cd-contact-info li a:hover {
+  text-decoration: underline;
+}
+
+/* Icono de círculo animado */
+.cd-nav-trigger svg circle {
+  stroke-dasharray: 157;
+  stroke-dashoffset: 157;
+  stroke: #656e79;
+  stroke-width: 1;
+  fill: transparent;
+  animation: dash 2s linear forwards;
+}
+@keyframes dash {
+  to {
     stroke-dashoffset: 0;
   }
-  
-  /* -------------------------------- 
-  
-  Navigation
-  
-  -------------------------------- */
-  .cd-nav {
-    position: fixed;
-    z-index: 9;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background: #656e79;
-    visibility: hidden;
-    opacity: 0;
-    transition: opacity 0.3s, visibility 0s 0.3s;
-  }
-  
-  .cd-nav.nav-is-visible {
-    visibility: visible;
-    opacity: 1;
-    transition: opacity 0.3s;
-  }
-  
-  .cd-navigation-wrapper {
-    display: flex;
-    height: 100%;
-    width: 100%;
-  }
-  
-  .cd-half-block {
-    flex: 1;
-    overflow-y: auto;
-    padding: 4em 2em;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  
-  .cd-primary-nav {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .cd-primary-nav .item a {
-    color: #ffffff;
-    font-size: 2em;
-    font-weight: 700;
-    display: block;
-    padding: 0.5em 0;
-    text-decoration: none;
-    transition: color 0.3s;
-  }
-  
-  .cd-primary-nav .item a:hover {
-    color: #23aae1;
-  }
-  
-  .cd-contact-info {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    font-size: 1.2em;
-    color: #ffffff;
-  }
-  
-  .cd-contact-info li {
-    margin: 0.5em 0;
-  }
-  
-  .cd-contact-info a {
-    color: #ffffff;
-    text-decoration: none;
-  }
-  
-  .cd-contact-info a:hover {
-    text-decoration: underline;
-  }
-  
-  /* -------------------------------- 
-  
-  Responsive 
-  
-  -------------------------------- */
-  @media only screen and (max-width: 768px) {
-    .cd-primary-nav .item a {
-      font-size: 1.5em;
-    }
-  
-    .cd-contact-info {
-      font-size: 1em;
-    }
-  }
+}
