@@ -1,0 +1,183 @@
+/* -------------------------------- 
+
+Primary style
+
+-------------------------------- */
+.cd-nav-trigger {
+    position: fixed;
+    z-index: 10;
+    bottom: 40px;
+    right: 40px;
+    height: 54px;
+    width: 54px;
+    border-radius: 50%;
+    background: #ffffff;
+    overflow: hidden;
+    white-space: nowrap;
+    color: transparent;
+    pointer-events: auto;
+    text-indent: 100%;
+    direction: rtl;
+  }
+  
+  .cd-nav-trigger span, .cd-nav-trigger span::after, .cd-nav-trigger span::before {
+    /* this is the hamburger icon */
+    position: absolute;
+    width: 16px;
+    height: 2px;
+    background-color: #656e79;
+  }
+  
+  .cd-nav-trigger span {
+    left: 50%;
+    top: 50%;
+    margin-left: -8px;
+    margin-top: -1px;
+    transition: background-color 0.3s;
+  }
+  
+  .cd-nav-trigger span::before, .cd-nav-trigger span::after {
+    content: '';
+    left: 0;
+    transition: transform 0.3s;
+  }
+  
+  .cd-nav-trigger span::before {
+    transform: translateY(-6px);
+  }
+  
+  .cd-nav-trigger span::after {
+    transform: translateY(6px);
+  }
+  
+  /* svg circle animation */
+  .cd-nav-trigger svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 54px;
+    width: 54px;
+    transform: rotate(-90deg);
+    pointer-events: none;
+  }
+  
+  .cd-nav-trigger circle {
+    fill: none;
+    stroke: #656e79;
+    stroke-width: 2;
+    stroke-dasharray: 157 157;
+    stroke-dashoffset: 157;
+    transition: stroke-dashoffset 0.4s;
+  }
+  
+  /* when navigation is visible */
+  .cd-nav-trigger.nav-is-visible span {
+    background-color: transparent;
+  }
+  
+  .cd-nav-trigger.nav-is-visible span::before {
+    transform: rotate(45deg);
+  }
+  
+  .cd-nav-trigger.nav-is-visible span::after {
+    transform: rotate(-45deg);
+  }
+  
+  .cd-nav-trigger.nav-is-visible circle {
+    stroke-dashoffset: 0;
+  }
+  
+  /* -------------------------------- 
+  
+  Navigation
+  
+  -------------------------------- */
+  .cd-nav {
+    position: fixed;
+    z-index: 9;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: #656e79;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s, visibility 0s 0.3s;
+  }
+  
+  .cd-nav.nav-is-visible {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.3s;
+  }
+  
+  .cd-navigation-wrapper {
+    display: flex;
+    height: 100%;
+    width: 100%;
+  }
+  
+  .cd-half-block {
+    flex: 1;
+    overflow-y: auto;
+    padding: 4em 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .cd-primary-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .cd-primary-nav .item a {
+    color: #ffffff;
+    font-size: 2em;
+    font-weight: 700;
+    display: block;
+    padding: 0.5em 0;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .cd-primary-nav .item a:hover {
+    color: #23aae1;
+  }
+  
+  .cd-contact-info {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 1.2em;
+    color: #ffffff;
+  }
+  
+  .cd-contact-info li {
+    margin: 0.5em 0;
+  }
+  
+  .cd-contact-info a {
+    color: #ffffff;
+    text-decoration: none;
+  }
+  
+  .cd-contact-info a:hover {
+    text-decoration: underline;
+  }
+  
+  /* -------------------------------- 
+  
+  Responsive 
+  
+  -------------------------------- */
+  @media only screen and (max-width: 768px) {
+    .cd-primary-nav .item a {
+      font-size: 1.5em;
+    }
+  
+    .cd-contact-info {
+      font-size: 1em;
+    }
+  }
