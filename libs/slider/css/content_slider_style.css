@@ -1,0 +1,22 @@
+/* content_slider_style.css */
+#slider1 {
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+#slider1 .circle_slider_text_wrapper {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    color: #333;
+    font-family: 'Dosis', sans-serif;
+    font-size: 18px;
+}
+#slider1 .content_slider_wrapper {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+#slider1 .content_slider_text_block_wrap {
+    padding: 20px;
+}
