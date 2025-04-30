@@ -207,3 +207,19 @@ ul.textos li {
 ul.textos li.active {
   display: block;
 }
+
+#particles-js,
+#particles-js-1,
+#particles-js-2,
+#particles-js-3,
+#particles-js-4,
+#particles-js-nosotros {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background: #0e0e0e; /* Ajustalo si querés otro fondo */
+    opacity: 0.9;
+}
