@@ -134,3 +134,76 @@
 .cd-half-block.principal nav ul li a:hover {
   color: #f9d342;
 }
+
+.contenedor {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  padding: 60px 20px;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  overflow: hidden;
+}
+
+section {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h1, h2, h3 {
+  font-family: 'Dosis', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #333;
+  margin: 20px 0;
+}
+
+p {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #444;
+  margin-bottom: 20px;
+}
+
+ul.botones {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 40px 0;
+  justify-content: center;
+}
+
+ul.botones li {
+  margin: 0 15px;
+}
+
+ul.botones li a {
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #2274A6;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+ul.botones li a:hover,
+ul.botones li a.active {
+  background-color: #2274A6;
+  color: white;
+}
+
+ul.textos {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+ul.textos li {
+  display: none;
+}
+
+ul.textos li.active {
+  display: block;
+}
