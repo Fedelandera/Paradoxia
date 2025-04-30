@@ -684,3 +684,31 @@ p {
 .contenedor.powered ul li img:hover {
   filter: grayscale(0%);
 }
+
+/* Fondo general oscuro y texto blanco */
+body {
+  background-color: #000;
+  color: #fff;
+}
+
+/* Asegura que todas las secciones hereden fondo transparente si no tienen uno definido */
+.contenedor {
+  background-color: transparent;
+}
+
+/* Mejora el contraste en títulos, párrafos y enlaces */
+h1, h2, h3, h4, h5, h6,
+p, a {
+  color: #fff;
+}
+
+/* Enlaces con hover claro */
+a:hover {
+  color: #00ffff;
+}
+
+/* Opcional: quita márgenes por defecto para un diseño más ajustado */
+body, html {
+  margin: 0;
+  padding: 0;
+}
