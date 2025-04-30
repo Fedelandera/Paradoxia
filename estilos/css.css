@@ -73,13 +73,13 @@ ul {
 }
 
 .button_socials.tw::before {
-  content: "\\f099"; /* Font Awesome Twitter */
+  content: "\f099"; /* Font Awesome Twitter */
   font-family: "Font Awesome 6 Free";
   font-weight: 900;
 }
 
 .button_socials.linkedin::before {
-  content: "\\f08c"; /* Font Awesome LinkedIn */
+  content: "\f08c"; /* Font Awesome LinkedIn */
   font-family: "Font Awesome 6 Free";
   font-weight: 900;
 }
