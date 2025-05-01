@@ -8,8 +8,8 @@
 /* TIPOGRAFÍA GLOBAL Y FONDOS */
 body {
   font-family: 'Montserrat', sans-serif;
-  background-color: #000; /* FONDO GENERAL */
-  color: #fff;
+  background-color: #000; /* solo para el efecto de partículas */
+  color: #222;
   line-height: 1.6;
   overflow-x: hidden;
 }
@@ -21,17 +21,10 @@ a {
 }
 
 a:hover {
-  color: #00ffff;
+  opacity: 0.8;
 }
 
-/* IMÁGENES */
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* ====== CONTENEDORES Y SECCIONES ====== */
+/* ====== CONTENEDORES ====== */
 
 .contenedor {
   position: relative;
@@ -39,13 +32,12 @@ img {
   min-height: 100vh;
   padding: 80px 20px;
   box-sizing: border-box;
-  background-color: transparent; /* aseguramos fondo transparente */
+  background-color: #fff; /* secciones claras como la demo */
 }
 
-/* BLOQUE HOME (PRIMERA SECCIÓN) */
+/* HOME (pantalla inicial con partículas y logo) */
 .contenedor.home {
-  background: radial-gradient(ellipse at center, rgba(0, 0, 20, 0.9) 0%, rgba(0, 0, 0, 1) 100%),
-              url('https://images.unsplash.com/photo-1448375240586-882707db888b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') center center / cover no-repeat;
+  background: #000; /* Fondo oscuro + partículas encima */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -55,23 +47,19 @@ img {
   z-index: 1;
 }
 
-.logo-central {
-  font-size: 60px;
-  font-family: 'Dosis', sans-serif;
-  color: #ffffff;
-  text-shadow: 0 0 20px rgba(0, 255, 255, 0.8),
-               0 0 40px rgba(0, 255, 255, 0.5),
-               0 0 60px rgba(0, 255, 255, 0.3);
+.logo-central img {
+  max-width: 300px;
+  width: 80%;
+  height: auto;
   animation: fadeIn 2s ease-out;
-  margin-top: 20px;
 }
 
-/* ====== TÍTULOS Y TIPOGRAFÍA GENERAL ====== */
+/* ====== TÍTULOS ====== */
 
 h1, h2, h3 {
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
-  color: #fff;
+  color: #222;
   margin-bottom: 20px;
   text-align: center;
 }
@@ -79,7 +67,7 @@ h1, h2, h3 {
 p {
   font-family: 'Quicksand', sans-serif;
   font-size: 16px;
-  color: #ccc;
+  color: #444;
   line-height: 1.6;
   margin-bottom: 16px;
 }
@@ -113,7 +101,7 @@ p {
   left: 0;
   height: 100%;
   width: 100%;
-  background: transparent;
+  background: rgba(0, 0, 0, 0.9);
   z-index: 1000;
   visibility: hidden;
   opacity: 0;
@@ -134,9 +122,29 @@ p {
   color: white;
 }
 
-/* ... (EL RESTO DE LAS SECCIONES SIGUE IGUAL) ... */
+/* ====== SECCIONES GENERALES ====== */
 
-/* Animación simple para el fade-in */
+.contenedor.paradoxia,
+.contenedor.servicios,
+.contenedor.casos,
+.contenedor.ego,
+.contenedor.contacto,
+.contenedor.powered {
+  background: #fff; /* secciones claras */
+  color: #222;
+}
+
+/* ====== SECCIÓN CASOS ====== */
+
+.contenedor.casos h3 {
+  font-size: 32px;
+  margin-bottom: 40px;
+  color: #222;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* Animación fade-in */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
