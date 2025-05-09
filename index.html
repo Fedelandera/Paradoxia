@@ -16,334 +16,90 @@
         }
     </style>
     <![endif]-->
-    
+
+    <!-- Particles.js -->
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 
-    <!-- Menú Lateral -->
+    <!-- Menú Lateral y estilos -->
     <link rel="stylesheet" href="libs/full-scren-pushing-navigation/css/style.css">
     <link rel="stylesheet" href="estilos/css.css" media="all">
-    <!-- Reemplazo de Fontello con Font Awesome -->
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Quicksand:300,400,700|Dosis:400,200,300,500,600,700,800" rel="stylesheet">
-    <link rel="stylesheet" href="libs/slider/css/content_slider_style.css">
-    <link rel="stylesheet" href="libs/slider/css/prettyPhoto.css" type="text/css" media="screen" title="prettyPhoto main stylesheet" charset="utf-8">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 
     <style>
-        /* Estilos CSS mejorados */
+        /* === BASE === */
         body {
             font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            background: radial-gradient(ellipse at center, #0a2e36 0%, #000000 100%);
+            color: #ffffff;
+            overflow-x: hidden;
         }
 
-        #contacto_modal {
-            position: fixed;
-            top: 0;
+        h1, h2, h3 {
+            font-family: 'Bebas Neue', sans-serif;
+            letter-spacing: 2px;
+            color: #a8ff60;
+            text-align: center;
+        }
+
+        /* === LOGO CENTRAL === */
+        .logo-central {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+            text-align: center;
+        }
+
+        .logo-central img {
+            width: 250px;
+            max-width: 80%;
+            height: auto;
+            filter: drop-shadow(0 0 15px rgba(0, 255, 0, 0.6));
+            transition: transform 0.3s ease;
+        }
+
+        .logo-central img:hover {
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 600px) {
+            .logo-central img {
+                width: 180px;
+            }
+        }
+
+        /* === Particles full height === */
+        #particles-js {
+            position: absolute;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.9);
-            box-shadow: 0 0 600px 100px black inset;
-            color: white;
-            font-weight: 400;
-            font-size: 12px;
-            z-index: 999;
-            top: -200%;
-            opacity: 0.2;
-            transition: all .6s ease;
-        }
-
-        #contacto_modal.active {
+            z-index: 0;
             top: 0;
-            opacity: 1;
-        }
-
-        #contact-modal {
-            text-align: center;
-            width: 100%;
-            max-width: 400px;
-            margin-right: auto;
-            position: absolute;
-            top: 100px;
-            left: 50%;
-            margin-left: -200px;
-            z-index: 3;
-            transition: top .3s ease;
-            display: none;
-        }
-
-        #contacto_modal h2,
-        #contacto_modal h3 {
-            font-weight: normal;
-            letter-spacing: .07em;
-            text-transform: none;
-            color: #FFFFFF;
-        }
-
-        #contact-modal-title {
-            font-size: 35px;
-            font-weight: 300;
-            text-transform: none;
-            margin-bottom: 20px;
-        }
-
-        #contact-modal p {
-            color: #999;
-            font-size: 18px;
-            font-weight: 300;
-        }
-
-        #contact-modal form {
-            margin-top: 30px;
-            margin-bottom: 70px;
-        }
-
-        #contact-modal .grid-50 {
-            float: left;
-            width: 50%;
-            box-sizing: border-box;
-        }
-
-        #contact-modal .grid-parent {
-            padding-left: 0;
-            padding-right: 0;
-        }
-
-        #contact-modal .grid-100 {
-            clear: both;
-            width: 100%;
-            box-sizing: border-box;
-        }
-
-        #contact-modal input,
-        #contact-modal textarea {
-            width: 100%;
-            color: #999;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 14px;
-            font-weight: bold;
-            background-color: white;
-            padding: 14px;
-            box-sizing: border-box;
-            border: 2px solid #FFFFFF;
-            border-radius: 10px;
-            margin-bottom: 18px;
-        }
-
-        #contact-modal input:focus,
-        #contact-modal textarea:focus {
-            color: #E0ECEF;
-            background: #001111;
-        }
-
-        #contact-modal .right-spacing {
-            width: 95%;
-            margin-right: 5%;
-        }
-
-        #contact-modal .left-spacing {
-            width: 95%;
-            margin-left: 5%;
-        }
-
-        #contact-modal textarea {
-            margin-bottom: 35px;
-        }
-
-        #contact-modal-submit-container {
-            margin-top: 10px;
-            margin-left: 30px;
-            position: relative;
-            float: left;
-        }
-
-        #contacto_modal .ui-button {
-            border: none;
-            background: #333;
-            color: #EEE;
-            font-size: 14px;
-            line-height: 18px;
-            text-align: center;
-            text-decoration: none;
-            text-shadow: none;
-            font-family: Arial, Helvetica, sans-serif;
-            letter-spacing: .03em;
-            padding-left: 32px;
-            padding-right: 32px;
-            margin-top: -15px;
-            display: inline-block;
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            perspective: 350px;
-        }
-
-        #contacto_modal .ui-button,
-        #contacto_modal .ui-button:focus,
-        #contacto_modal .ui-button:hover {
-            background-color: transparent;
-        }
-
-        #contact-modal-submit {
-            width: 180px;
-            padding-left: 0;
-            padding-right: 0;
             left: 0;
         }
 
-        #contacto_modal .button {
-            background-color: transparent;
-            border: 3px solid white;
-            opacity: .85;
-            display: block;
-        }
-
-        #contacto_modal .ui-button {
-            color: #EEE;
-            font-size: 14px;
-            line-height: 18px;
-            text-align: center;
-            text-shadow: none;
-            font-family: Arial, Helvetica, sans-serif;
-            letter-spacing: .03em;
-        }
-
-        #contacto_modal .button span {
-            color: white;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 16px;
-            font-weight: 300;
-            letter-spacing: .03em;
-            text-align: center;
-            text-transform: uppercase;
-            margin-top: 8px;
-            margin-bottom: 8px;
-            display: block;
-        }
-
-        #contact-modal-cancel-container {
-            margin-top: 10px;
-            float: right;
-        }
-
-        #contact-modal-cancel {
-            color: white;
-            font-size: 16px;
-            font-weight: 500;
-            text-transform: uppercase;
-            padding-bottom: 3px;
-            border-bottom: 1px solid white;
-            float: right;
+        /* === Otros ajustes === */
+        .contenedor.home {
             position: relative;
-            top: -10px;
-            right: 30px;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-
-        #contact-modal-cancel,
-        #contact-modal-cancel:hover {
-            text-decoration: none;
-        }
-
-        .modal-close {
-            width: 21px;
-            height: 21px;
-            background: url('img/contacto/icon_modal_close.png') no-repeat center center;
-            position: fixed;
-            top: 25px;
-            right: 25px;
-            z-index: 1000;
-            display: none;
-        }
-
-        /* Media Queries */
-        @media all and (max-height: 710px) {
-            #contact-modal {
-                top: 50px;
-            }
-        }
-
-        @media all and (max-height: 660px) {
-            #contact-modal {
-                top: 10px;
-            }
-        }
-
-        @media all and (max-height: 610px) {
-            #contact-modal-title {
-                font-size: 28px;
-            }
-        }
-
-        @media all and (max-height: 560px) {
-            #contact-modal-title {
-                margin-bottom: 10px;
-            }
-
-            #contact-modal p {
-                margin: 10px 0;
-            }
-
-            #contact-modal form {
-                margin-top: 20px;
-            }
-        }
-
-        @media all and (max-height: 530px) {
-            #contact-modal form {
-                margin-top: 10px;
-            }
-
-            #contact-modal textarea {
-                margin-bottom: 20px;
-            }
-        }
-
-        @media all and (max-height: 510px) {
-            #contact-modal input,
-            #contact-modal textarea {
-                margin-bottom: 12px;
-            }
-
-            #contact-modal textarea {
-                margin-bottom: 20px;
-            }
-        }
-
-        @media all and (max-height: 480px) {
-            #contact-modal textarea {
-                margin-bottom: 12px;
-            }
-        }
-
-        @media all and (max-height: 460px) {
-            #contact-modal input,
-            #contact-modal textarea {
-                padding: 10px 14px;
-            }
-        }
-
-        @media all and (max-height: 440px) {
-            #contact-modal input,
-            #contact-modal textarea {
-                padding: 8px 14px;
-            }
-        }
-
-        @media all and (max-height: 420px) {
-            #contact-modal input,
-            #contact-modal textarea {
-                padding: 6px 14px;
-            }
+            min-height: 100vh;
+            overflow: hidden;
         }
     </style>
 </head>
 
-<body id="skrollr-body">
+<body>
 
     <!-- MENU LATERAL -->
     <a href="#cd-nav" class="cd-nav-trigger">Menu
         <span class="cd-nav-icon"></span>
         <svg x="0px" y="0px" width="54px" height="54px" viewBox="0 0 54 54">
-            <circle fill="transparent" stroke="#656e79" stroke-width="1" cx="27" cy="27" r="25" stroke-dasharray="157 157" stroke-dashoffset="157"></circle>
+            <circle fill="transparent" stroke="#656e79" stroke-width="1" cx="27" cy="27" r="25"
+                stroke-dasharray="157 157" stroke-dashoffset="157"></circle>
         </svg>
     </a>
 
@@ -352,7 +108,7 @@
             <div class="cd-half-block principal">
                 <nav>
                     <ul class="links cd-primary-nav">
-                        <li class="item home cd-nav-trigger2"><a href="#home"></a></li>
+                        <li class="item home cd-nav-trigger2"><a href="#home">Inicio</a></li>
                         <li class="item cd-nav-trigger2"><a href="#paradoxia">Paradoxia</a></li>
                         <li class="item cd-nav-trigger2"><a href="#servicios">Servicios</a></li>
                         <li class="item cd-nav-trigger2"><a href="#casos">Casos</a></li>
@@ -364,7 +120,7 @@
             <div class="cd-half-block secundario">
                 <address>
                     <ul class="cd-contact-info">
-                        <li><a href="mailto:info@myemail.co">hola@paradoxia.com.ar</a></li>
+                        <li><a href="mailto:hola@paradoxia.com.ar">hola@paradoxia.com.ar</a></li>
                         <li>+54 11 4792 6867</li>
                         <li>
                             <span>Manuel Aguirre 646</span>
@@ -377,464 +133,117 @@
         </div>
     </div>
 
-    <!-- particles.js container -->
+    <!-- HOME -->
     <div class="contenedor home" id="home">
         <div id="particles-js"></div>
         <div class="logo-central">
-            <img src="https://mood.com.ar/demos/paradoxia/img/home/logo.png" alt="Paradoxia Logo">
+            <img src="img/paradoxia_logo.png" alt="Paradoxia Logo">
         </div>
     </div>
 
+    <!-- SECCIÓN PARADOXIA -->
     <div class="contenedor paradoxia" id="paradoxia">
         <section>
-            <ul class="botones">
-                <li class="analisis"><h1><a href="javascript:;" class="active">Análisis</a></h1></li>
-                <li class="comunicacion"><h1><a href="javascript:;">Comunicación</a></h1></li>
-                <li class="medicion"><h1><a href="javascript:;">Medición</a></h1></li>
-            </ul>
-            <ul class="textos">
-                <li class="analisis active">
-                    <p>Para determinar la estrategia a adoptar con cada cliente, el primer paso es la observación. Estamos convencidos de que conocer todos los elementos que nos brinda el medio sobre aquello que buscamos difundir, mejora nuestra estrategia y aumenta su efectividad.</p>
-                    <p><strong>Nuestra metodología parte de un buceo inicial que nos aporta las características básicas del mercado. El monitoreo, las capacitaciones, el análisis de las tendencias y la identificación de los influenciadores son solo algunos de los elementos de esta etapa.</strong></p>
-                    <p>Exploramos el medio, navegamos los datos y evaluamos cada una de las posibilidades y caminos a seguir que se nos presentan. Para poder llegar, lo más nutridos posibles, a nuestra mesa creativa en donde ponemos en común los resultados y evaluamos todas las alternativas posibles y las mejores estrategias para su comunicación.</p>
-                </li>
-                <li class="comunicacion">
-                    <p><strong>Buscamos construir la identidad de nuestros clientes y expandir su alcance. Por eso estudiamos, diseñamos, gestionamos y medimos nuestras estrategias. Y para ello, nos posicionamos debajo del puente que las empresas entablan con sus clientes, para sostenerlo y alimentarlo periódicamente.</strong></p>
-                    <p>Diseñamos y seleccionamos las piezas de difusión en conjunto con nuestros clientes, nos encargamos de programar y llevar a cabo todas las acciones necesarias para lograr los objetivos propuestos. Incluimos en nuestros servicios la cobertura de eventos relevantes que puedan colaborar con la comunicación.</p>
-                    <p>No importa cuán bien se desarrolle tu empresa, si eso no es comunicado correctamente a quienes inciden en tu negocio, no se logrará el posicionamiento esperado.</p>
-                </li>
-                <li class="medicion">
-                    <p>El análisis de las distintas variables de medición implicadas, conforma el pilar de nuestra metodología. Contribuimos al enriquecimiento de bases de datos relevantes que nos ayuden a actualizar constantemente nuestra estrategia.</p>
-                    <p><strong>¿Cuál es el nivel de engagement de tus posteos...? ¿Cuál es el tamaño y cuáles son las características de la Comunidad a la cual te estás dirigiendo?</strong><br />Observamos las variables más importantes y las cruzamos con los pequeños datos, aquellos que pueden llegar a pasar desapercibidos para el ojo distraído, pero que para nosotros pueden representar puntos de inflexión a la hora de decidir un cambio de estrategia. El sentido que nosotros le damos a la medición tiene que ver con corroborar de manera periódica si las acciones que realizamos efectivamente inciden sobre las variables más relevantes para el cumplimiento de la estrategia acordada. Nos servimos de Infografías, cartografías e Informes customizados, que realizamos según tus necesidades, para poder graficar y facilitar la observación e interpretación de aquello que te queremos mostrar.</p>
-                    <p>Elaboramos informes de manera diaria, semanal y mensual con desglose y análisis de variables representativas de la estrategia comunicacional.</p>
-                </li>
-            </ul>
-            <div class="play"><a href="javascript:;"></a></div>
+            <h2>¿Qué es Paradoxia?</h2>
+            <p style="max-width: 800px; margin: 0 auto; text-align: center; line-height: 1.6;">
+                Somos una consultora especializada en comunicación política y empresarial, con un enfoque innovador y estratégico. Nuestro equipo combina análisis profundo, creatividad y tecnología para lograr los mejores resultados para cada cliente.
+            </p>
         </section>
     </div>
 
-    <div class="contenedor servicios" id="servicios">
-        <section>
-            <ul>
-                <li class="redes_sociales">
-                    <div class="hover gradient">
-                        <div id="particles-js-1"></div>
-                    </div>
-                    <div class="contenidos">
-                        <div class="boton"><h2><span>Redes</span> <span>sociales</span></h2></div>
-                        <ul class="texto">
-                            <li>Community Management</li>
-                            <li>Consumer Engagement</li>
-                            <li>Creación de Identidades Digitales</li>
-                            <li>Implementación de Campañas Promocionadas</li>
-                            <li>StartUp y Gestión: Contact Center Digital</li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="com_gobierno">
-                    <div class="hover gradient">
-                        <div id="particles-js-2"></div>
-                    </div>
-                    <div class="contenidos">
-                        <div class="boton"><h2><span>Comunicación</span> <span>de Gobierno</span></h2></div>
-                        <ul class="texto">
-                            <li>Estrategias de Difusión de Planes y Políticas</li>
-                            <li>Comunicación de Crisis</li>
-                            <li>Especialización por Área y Cargo</li>
-                            <li>Asuntos Públicos y Prensa</li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="camp_electorales">
-                    <div class="hover gradient">
-                        <div id="particles-js-3"></div>
-                    </div>
-                    <div class="contenidos">
-                        <div class="boton"><h2><span>Campañas</span> <span>Electorales</span></h2></div>
-                        <ul class="texto">
-                            <li>Planificación Estratégica de la Comunicación</li>
-                            <li>Prensa y Difusión</li>
-                            <li>Asesoramiento Político Integral</li>
-                            <li>Relaciones Públicas y Actividades de Capacitación</li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="com_empresarial">
-                    <div class="hover gradient">
-                        <div id="particles-js-4"></div>
-                    </div>
-                    <div class="contenidos">
-                        <div class="boton"><h2><span>Comunicación</span> <span>Empresarial</span></h2></div>
-                        <ul class="texto">
-                            <li>Diseño de Estrategia de Gestión</li>
-                            <li>Reputación Corporativa</li>
-                            <li>Comunicación Interna</li>
-                            <li>Comunicación de Crisis</li>
-                            <li>Generación de Eventos y Congresos</li>
-                            <li>Desarrollo de Canales de Atención al Cliente</li>
-                        </ul>
-                    </div>
-                </li>
-            </ul>
-        </section>
-    </div>
+    <!-- FOOTER SIMPLE -->
+    <footer style="text-align: center; padding: 20px; font-size: 14px; background: #0a2e36;">
+        &copy; 2025 Paradoxia - Todos los derechos reservados
+    </footer>
 
-    <div class="contenedor powered">
-        <section>
-            <h3>Paradoxia <strong>POWER BY</strong></h3>        </section>
-          </div>
-      
-          <div class="contenedor casos" id="casos">
-              <section>
-                  <h3>Casos</h3>
-                  <div class="container">
-                      <div class="quotes-wrapper">
-                          <div class="quotes">
-                              <p class="quote active" id="quote1">“El trabajo con el equipo de Paradoxia nos dio el impulso que necesitábamos para trabajar nuestra comunicación en redes sociales. Logramos desarrollar una comunidad que crece día a día, con una comunicación efectiva y directa.”</p>
-                              <p class="quote" id="quote2">“Elegimos al equipo de Paradoxia para hacer el start up de nuestras redes sociales y no nos equivocamos. Alcanzamos el nivel de interacción que buscábamos con nuestros usuarios y obtuvimos un nivel de comunicación óptimo de nuestras iniciativas.”</p>
-                              <p class="quote" id="quote3">“Trabajando con Paradoxia la comunicación a través de redes sociales logró desarrollar un punto de contacto con los ciudadanos de la provincia. La dinámica aplicada a la difusión de iniciativas y propuestas nos permitió llegar de manera precisa a los santacruceños.”</p>
-                              <p class="quote" id="quote4">“El Foro Federal de Organismos Electorales Provinciales surgió para difundir la actividad de cada Provincia en materia judicial, trabajando con el equipo de Paradoxia logramos generar a través de las redes sociales un canal de vinculación y difusión que nos permitió potenciar nuestra actividad.”</p>
-                              <p class="quote" id="quote5">“Desde el primer día pensé que era importante comunicar lo que hacemos desde la Escuela de Política, Gobierno y Relaciones Internacionales, y junto a Paradoxia comprendí que las redes sociales son el canal primordial para hacerlo y que mayor llegada tiene en la actualidad.”</p>
-                              <p class="quote" id="quote6">“Dejar en manos de Paradoxia el manejo de las redes sociales fue algo que sumó mucho a mi restaurante. Fue un proyecto personal que implicó muchos desafíos para mí y ellos me ayudaron a darlo a conocer y a posicionarlo en el mercado.”</p>
-                          </div>
-                      </div>
-      
-                      <ul class="client-list">
-                          <li data-class="quote1" class="quote1 active">
-                              <blockquote>
-                                  <footer class="author">
-                                      <p>
-                                          <span><strong>Damián Szvalb</strong></span><br>
-                                          <span class="title">Director de comunicación</span><br>
-                                          Provincia Net
-                                      </p>
-                                  </footer>
-                              </blockquote>
-                          </li>
-                          <li data-class="quote2" class="quote2">
-                              <blockquote>
-                                  <footer class="author">
-                                      <p>
-                                          <span><strong>Alejandra Martínez</strong></span><br>
-                                          <span class="title">Directora de Comunicación</span><br>
-                                          Edesur
-                                      </p>
-                                  </footer>
-                              </blockquote>
-                          </li>
-                          <li data-class="quote3" class="quote3">
-                              <blockquote>
-                                  <footer class="author">
-                                      <p>
-                                          <span><strong>Fernando Cotillo</strong></span><br>
-                                          <span class="title">Vicegobernador de Santa Cruz</span>
-                                      </p>
-                                  </footer>
-                              </blockquote>
-                          </li>
-                          <li data-class="quote4" class="quote4">
-                              <blockquote>
-                                  <footer class="author">
-                                      <p>
-                                          <span><strong>José María Pérez Corti</strong></span><br>
-                                          <span class="title">Foro Federal de Organismos Electorales Provinciales</span>
-                                      </p>
-                                  </footer>
-                              </blockquote>
-                          </li>
-                          <li data-class="quote5" class="quote5">
-                              <blockquote>
-                                  <footer class="author">
-                                      <p>
-                                          <span><strong>Alfonso Santiago</strong></span><br>
-                                          <span class="title">Director de la Escuela de Política</span><br>
-                                          Gobierno y Relaciones Internacionales
-                                      </p>
-                                  </footer>
-                              </blockquote>
-                          </li>
-                          <li data-class="quote6" class="quote6">
-                              <blockquote>
-                                  <footer class="author">
-                                      <p>
-                                          <span><strong>Maitena Chapela</strong></span><br>
-                                          <span class="title">Dueña de Fellini Restaurante</span>
-                                      </p>
-                                  </footer>
-                              </blockquote>
-                          </li>
-                      </ul>
-                  </div>
-              </section>
-          </div>
-          <div class="contenedor ego" id="nosotros" data-bottom-top="background-position: center 260px;" data-200-top-top="background-position: center 0px;">
-            <section>
-                <div id="particles-js-nosotros" style="position:absolute; top:0; left:0; bottom:0; right:0;"></div>
-    
-                <div class="titulo" data-anchor-target="#nosotros" data-bottom-top="top: -380px; position: fixed;" data-300-center-top="top: -120px;" data-140-top-top="top: 0px;" data-top-top="top: 0px;" data-bottom-bottom="top: 0px;" data-top-center="top: -300px;"></div>
-    
-                <div class="slider" data-anchor-target="#nosotros" data-center-top="bottom: -200px;" data-bottom-bottom="bottom: 0px;">
-                    <div class="content_slider_wrapper" id="slider1">
-                        <div class="circle_slider_text_wrapper" id="sw0" style="display: none;">
-                            <div class="content_slider_text_block_wrap">
-                                <h3>Federico Landera</h3>
-                                <span>Director</span>
-                                <span><strong>E-mail: </strong><a href="mailto:federico.landera@paradoxia.com.ar">federico.landera@paradoxia.com.ar</a></span>
-                            </div>
-                        </div>
-    
-                        <div class="circle_slider_text_wrapper" id="sw1" style="display: none;">
-                            <div class="content_slider_text_block_wrap">
-                                <h3>Federico Paolorossi</h3>
-                                <span>Director de Finanzas</span>
-                                <span><strong>E-mail: </strong><a href="mailto:federico.paolorossi@paradoxia.com.ar">federico.paolorossi@paradoxia.com.ar</a></span>
-                            </div>
-                        </div>
-    
-                        <div class="circle_slider_text_wrapper" id="sw2" style="display: none;">
-                            <div class="content_slider_text_block_wrap">
-                                <h3>Damián Bo</h3>
-                                <span>Encargado de Comunicación</span>
-                                <span><strong>E-mail: </strong><a href="mailto:damian.bo@paradoxia.com.ar">damian.bo@paradoxia.com.ar</a></span>
-                            </div>
-                        </div>
-    
-                        <div class="circle_slider_text_wrapper" id="sw3" style="display: none;">
-                            <div class="content_slider_text_block_wrap">
-                                <h3>Florencia Secchiaro</h3>
-                                <span>Coordinadora de Cuentas e Investigación Electoral</span>
-                                <span><strong>E-mail: </strong><a href="mailto:florencia.secchiaro@paradoxia.com.ar">florencia.secchiaro@paradoxia.com.ar</a></span>
-                            </div>
-                        </div>
-    
-                        <div class="circle_slider_text_wrapper" id="sw4" style="display: none;">
-                            <div class="content_slider_text_block_wrap">
-                                <h3>Rosario Colombo</h3>
-                                <span>Gestión de Cuentas e Investigación Electoral</span>
-                                <span><strong>E-mail: </strong><a href="mailto:rosario.colombo@paradoxia.com.ar">rosario.colombo@paradoxia.com.ar</a></span>
-                            </div>
-                        </div>
-    
-                        <div class="circle_slider_text_wrapper" id="sw6" style="display: none;">
-                            <div class="content_slider_text_block_wrap">
-                                <h3>Ezequiel Macciuci</h3>
-                                <span>&nbsp;</span>
-                                <span><strong>E-mail: </strong><a href="mailto:e.macciuci@paradoxia.com.ar">e.macciuci@paradoxia.com.ar</a></span>
-                            </div>
-                        </div>
-    
-                    </div> <!-- content_slider_wrapper -->
-                </div> <!-- slider -->
-            </section>
-        </div>
-        <div class="contenedor contacto" id="contacto">
-          <section>
-              <h3><span class="modal-open" style="cursor: pointer;">Contáctanos</span></h3>
-  
-              <ul class="iconos">
-                  <li class="icono icon-linkedin"></li>
-                  <li class="icono icon-twitter"></li>
-                  <li class="icono icon-facebook"></li>
-                  <li class="icono icon-scribd"></li>
-                  <li class="icono icon-youtube"></li>
-              </ul>
-  
-              <ul class="datos">
-                  <li>Manuel Aguirre 646 - CP 1640</li>
-                  <li>Acassuso - San Isidro</li>
-                  <li>&nbsp;</li>
-                  <li>Tel: +54 11 4792 6867</li>
-                  <li class="min">hola@paradoxia.com.ar</li>
-              </ul>
-          </section>
-  
-          <div id="sarasa-map">
-              <div id="contact-map" data-anchor-target="#sarasa-map" data-bottom-top="top:-380px;" data-bottom-bottom="top:-190px;"></div>
-          </div>
-      </div>
-      <div class="contenedor bymood" id="bymood" style="background:#FFFFFF; height:46px; overflow:hidden;">
-        <section style="height:40px; padding-top:3px; padding-left:20px; border-top:0;">
-            <a href="http://www.mood.com.ar" target="_blank" style="display: block; float: left; height:40px;">
-                <img src="img/bymood.png" alt="Mood logo">
-            </a>
-        </section>
-    </div>
-
-    <!-- Modal de contacto -->
-    <div id="contacto_modal">
-        <div id="contact-modal" style="display: block;">
-            <div id="contact-modal-form">
-                <h2 id="contact-modal-title">¡Contanos tu necesidad!</h2>
-                <p id="contact-modal-description">Por favor completá el siguiente formulario y nos comunicaremos con vos.</p>
-
-                <form id="contact-form" action="" method="post" novalidate>
-                    <input type="hidden" name="checkpost" value="y">
-
-                    <div class="grid-parent grid-50 mobile-grid-100">
-                        <input class="required right-spacing" name="nombre" type="text" placeholder="NOMBRE" required>
-                    </div>
-                    <div class="grid-parent grid-50 mobile-grid-100">
-                        <input class="required left-spacing" name="apellido" type="text" placeholder="APELLIDO" required>
-                    </div>
-                    <div class="grid-parent grid-100">
-                        <input name="telefono" type="text" placeholder="TELÉFONO">
-                    </div>
-                    <div class="grid-parent grid-100">
-                        <input class="required" name="email" type="email" placeholder="MAIL" required>
-                    </div>
-                    <div class="grid-parent grid-100">
-                        <input name="empresa" id="additional-field" type="text" placeholder="EMPRESA">
-                    </div>
-                    <div class="grid-parent grid-100">
-                        <textarea class="required" name="mensaje" placeholder="MENSAJE" required></textarea>
-                    </div>
-                    <div id="contact-modal-submit-container">
-                        <a id="contact-modal-submit" class="ui-button" href="javascript:;" title="Submit">
-                            <div class="button">
-                                <span>ENVIAR</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div id="contact-modal-cancel-container" class="hide-on-mobile">
-                        <a id="contact-modal-cancel" href="javascript:;">Cancelar</a>
-                    </div>
-                </form>
-            </div>
-
-            <div id="contact-modal-thank-you" style="display: none;">
-                <div class="cerrar"><a href="javascript:;">x</a></div>
-                <div class="inner"></div>
-            </div>
-        </div>
-
-        <a href="javascript:void(0)" class="icon-modal-close" style="display: inline;"></a>
-    </div>
-
-    <!-- Scripts finales -->
-    <script src="libs/particles/particles.min.js"></script>
-    <script src="libs/particles/app.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=&sensor=false&extension=.js"></script>
-    <script src="libs/slider/js/jquery.content_slider.min.js"></script>
-    <script src="libs/slider/js/jquery.mousewheel.js"></script>
-    <script src="libs/slider/js/jquery.prettyPhoto.js" charset="utf-8"></script>
-    <script src="libs/slider/js/jquery.animate-colors.js"></script>
-    <script src="libs/slider/js/additional_content.js"></script>
-    <script src="libs/skrollr.min.js"></script>
-    <script src="libs/full-scren-pushing-navigation/js/main.js"></script>
-
+    <!-- ParticlesJS Config -->
     <script>
         particlesJS("particles-js", {
-          "particles": {
-            "number": {
-              "value": 80,
-              "density": {
-                "enable": true,
-                "value_area": 800
-              }
-            },
-            "color": {
-              "value": "#ffffff"
-            },
-            "shape": {
-              "type": "circle",
-              "stroke": {
-                "width": 0,
-                "color": "#000000"
-              },
-              "polygon": {
-                "nb_sides": 5
-              },
-              "image": {
-                "src": "img/github.svg",
-                "width": 100,
-                "height": 100
-              }
-            },
-            "opacity": {
-              "value": 0.5,
-              "random": false,
-              "anim": {
-                "enable": false,
-                "speed": 1,
-                "opacity_min": 0.1,
-                "sync": false
-              }
-            },
-            "size": {
-              "value": 3,
-              "random": true,
-              "anim": {
-                "enable": false,
-                "speed": 40,
-                "size_min": 0.1,
-                "sync": false
-              }
-            },
-            "line_linked": {
-              "enable": true,
-              "distance": 150,
-              "color": "#ffffff",
-              "opacity": 0.4,
-              "width": 1
-            },
-            "move": {
-              "enable": true,
-              "speed": 6,
-              "direction": "none",
-              "random": false,
-              "straight": false,
-              "out_mode": "out",
-              "bounce": false,
-              "attract": {
-                "enable": false,
-                "rotateX": 600,
-                "rotateY": 1200
-              }
-            }
-          },
-          "interactivity": {
-            "detect_on": "canvas",
-            "events": {
-              "onhover": {
-                "enable": true,
-                "mode": "grab"
-              },
-              "onclick": {
-                "enable": true,
-                "mode": "push"
-              },
-              "resize": true
-            },
-            "modes": {
-              "grab": {
-                "distance": 140,
+            "particles": {
+                "number": {
+                    "value": 100,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#00ff99"
+                },
+                "shape": {
+                    "type": "circle",
+                    "stroke": {
+                        "width": 0,
+                        "color": "#000000"
+                    }
+                },
+                "opacity": {
+                    "value": 0.5,
+                    "random": true
+                },
+                "size": {
+                    "value": 3,
+                    "random": true
+                },
                 "line_linked": {
-                  "opacity": 1
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#00ff99",
+                    "opacity": 0.4,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 4,
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false
                 }
-              },
-              "bubble": {
-                "distance": 400,
-                "size": 40,
-                "duration": 2,
-                "opacity": 8,
-                "speed": 3
-              },
-              "repulse": {
-                "distance": 200,
-                "duration": 0.4
-              },
-              "push": {
-                "particles_nb": 4
-              },
-              "remove": {
-                "particles_nb": 2
-              }
-            }
-          },
-          "retina_detect": true
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": "grab"
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "push"
+                    },
+                    "resize": true
+                },
+                "modes": {
+                    "grab": {
+                        "distance": 140,
+                        "line_linked": {
+                            "opacity": 1
+                        }
+                    },
+                    "bubble": {
+                        "distance": 400,
+                        "size": 40,
+                        "duration": 2,
+                        "opacity": 8,
+                        "speed": 3
+                    },
+                    "repulse": {
+                        "distance": 200,
+                        "duration": 0.4
+                    },
+                    "push": {
+                        "particles_nb": 4
+                    },
+                    "remove": {
+                        "particles_nb": 2
+                    }
+                }
+            },
+            "retina_detect": true
         });
-      </script>
-      
+    </script>
+
 </body>
 </html>
