@@ -1,25 +1,22 @@
-/* =======================
-   Reset y Base
-========================== */
+/* Reset básico y configuración global */
 body {
-    font-family: 'Montserrat', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #111;
-    color: #ddd;
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+    background: #000;
 }
 
-/* =======================
-   HOME SECTION
-========================== */
+/* Fondo para el home con partículas */
 .contenedor.home {
     position: relative;
-    width: 100%;
     height: 100vh;
+    background: url('/img/fondo_galaxia.png') no-repeat center center fixed;
+    background-size: cover;
     overflow: hidden;
-    background: url('img/fondo_galaxia.png') no-repeat center center / cover;
 }
 
+/* Particles.js debe estar encima del fondo */
 #particles-js {
     position: absolute;
     width: 100%;
@@ -27,70 +24,110 @@ body {
     z-index: 1;
 }
 
+/* Logo centrado */
 .logo-central {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    position: relative;
     z-index: 2;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
 }
 
 .logo-central img {
-    max-width: 400px;
+    max-width: 300px;
     width: 80%;
     height: auto;
+    display: block;
 }
 
-/* =======================
-   PARADOXIA SECTION
-========================== */
-.contenedor.paradoxia section > ul {
+/* MENU LATERAL */
+.cd-nav-trigger {
+    position: fixed;
+    top: 30px;
+    left: 30px;
+    z-index: 999;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
+    align-items: center;
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+}
+
+.cd-nav-trigger span {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.cd-nav-icon {
+    width: 30px;
+    height: 3px;
+    background: #fff;
+    position: relative;
+}
+
+.cd-nav-icon::before,
+.cd-nav-icon::after {
+    content: '';
+    width: 30px;
+    height: 3px;
+    background: #fff;
+    position: absolute;
+    left: 0;
+    transition: all 0.3s;
+}
+
+.cd-nav-icon::before {
+    top: -8px;
+}
+
+.cd-nav-icon::after {
+    top: 8px;
+}
+
+/* Ocultar la navegación hasta que esté activa */
+.cd-nav {
+    display: none;
+}
+
+/* Mostrar menú cuando se active */
+.cd-nav.active {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.95);
+    width: 100%;
+    height: 100%;
+    z-index: 998;
+    padding: 100px 20px;
+}
+
+.cd-nav .links {
     list-style: none;
     padding: 0;
-    margin: 40px 0;
-}
-
-.contenedor.paradoxia section > ul > li {
-    width: 320px;
-    background: #1e1e1e;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-}
-
-.contenedor.paradoxia section > ul > li:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-}
-
-.contenedor.paradoxia section > ul > li h1 {
-    font-size: 1.5em;
-    text-align: center;
-    background: linear-gradient(45deg, #00ff9c, #00b3ff);
-    padding: 20px;
-    color: #fff;
     margin: 0;
+    text-align: center;
 }
 
-.contenedor.paradoxia section > ul > li p {
-    padding: 20px;
-    font-size: 0.95em;
-    line-height: 1.5;
-    color: #ccc;
+.cd-nav .links li {
+    margin: 20px 0;
 }
 
-/* =======================
-   SERVICIOS SECTION
-========================== */
+.cd-nav .links li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 24px;
+    transition: color 0.3s;
+}
+
+.cd-nav .links li a:hover {
+    color: #1abc9c;
+}
+
+/* Botones de secciones Paradoxia y Servicios */
+.contenedor.paradoxia section > ul,
 .contenedor.servicios section > ul {
     display: flex;
     flex-wrap: wrap;
@@ -101,6 +138,7 @@ body {
     margin: 40px 0;
 }
 
+.contenedor.paradoxia section > ul > li,
 .contenedor.servicios section > ul > li {
     width: 320px;
     background: #1e1e1e;
@@ -113,107 +151,63 @@ body {
     flex-direction: column;
 }
 
+.contenedor.paradoxia section > ul > li:hover,
 .contenedor.servicios section > ul > li:hover {
     transform: translateY(-8px);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
 
+.contenedor.paradoxia section > ul > li h1,
 .contenedor.servicios section > ul > li h2 {
-    font-size: 1.5em;
+    font-size: 22px;
     text-align: center;
-    background: linear-gradient(45deg, #00ff9c, #00b3ff);
-    padding: 20px;
-    color: #fff;
+    padding: 15px;
+    background: linear-gradient(45deg, #1abc9c, #16a085);
     margin: 0;
+    color: #fff;
 }
 
+.contenedor.paradoxia section > ul > li p,
 .contenedor.servicios section > ul > li ul.texto {
     padding: 20px;
-    list-style: none;
-    margin: 0;
-}
-
-.contenedor.servicios section > ul > li ul.texto li {
-    font-size: 0.95em;
+    font-size: 16px;
     line-height: 1.5;
     color: #ccc;
-    margin-bottom: 10px;
 }
 
-/* =======================
-   MENU LATERAL
-========================== */
-.cd-nav-trigger {
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    z-index: 999;
-    width: 40px;
-    height: 40px;
-    background: transparent;
-    border: 2px solid #ddd;
-    border-radius: 50%;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.cd-nav-trigger span,
-.cd-nav-trigger span::before,
-.cd-nav-trigger span::after {
+/* Íconos minimalistas */
+.contenedor.paradoxia section > ul > li::before,
+.contenedor.servicios section > ul > li::before {
     content: '';
     display: block;
-    width: 20px;
-    height: 2px;
-    background: #ddd;
-    transition: all 0.3s;
-    position: relative;
+    height: 100px;
+    background: center / contain no-repeat;
+    margin: 20px auto 0;
+    width: 60px;
 }
 
-.cd-nav-trigger span::before {
-    transform: translateY(-6px);
+/* Ejemplo para agregar un icono: personaliza según tus imágenes */
+.contenedor.paradoxia section > ul > li.analisis::before {
+    background-image: url('/img/icon_analisis.png');
+}
+.contenedor.paradoxia section > ul > li.comunicacion::before {
+    background-image: url('/img/icon_comunicacion.png');
+}
+.contenedor.paradoxia section > ul > li.medicion::before {
+    background-image: url('/img/icon_medicion.png');
 }
 
-.cd-nav-trigger span::after {
-    transform: translateY(4px);
-}
-
-/* =======================
-   CASOS DE ÉXITO
-========================== */
-.contenedor.casos h3 {
-    text-align: center;
-    margin-top: 40px;
-    font-size: 2em;
-    color: #00ff9c;
-}
-
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+/* Casos */
+.contenedor.casos .container {
+    max-width: 1000px;
+    margin: 0 auto;
     padding: 40px 20px;
-}
-
-.quotes-wrapper {
-    max-width: 800px;
-    margin-bottom: 40px;
-}
-
-.quotes p.quote {
-    display: none;
-    font-size: 1.1em;
-    color: #ddd;
     text-align: center;
-    padding: 20px;
-    border-left: 4px solid #00ff9c;
-    background: #1e1e1e;
-    border-radius: 8px;
 }
 
-.quotes p.quote.active {
-    display: block;
+.contenedor.casos h3 {
+    font-size: 28px;
+    margin-bottom: 30px;
 }
 
 .client-list {
@@ -223,86 +217,59 @@ body {
     gap: 20px;
     list-style: none;
     padding: 0;
-    margin: 0;
 }
 
 .client-list li {
+    width: 300px;
     background: #1e1e1e;
     padding: 20px;
-    border-radius: 8px;
-    width: 250px;
-    text-align: center;
-    color: #ccc;
-    transition: transform 0.3s, box-shadow 0.3s;
-    cursor: pointer;
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .client-list li:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
 
-.client-list li.active {
-    border: 2px solid #00ff9c;
+.client-list strong {
+    font-size: 18px;
+    color: #fff;
 }
 
-/* =======================
-   FORMULARIO DE CONTACTO
-========================== */
-#contacto_modal {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.95);
-    z-index: 999;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
+.client-list .title {
+    font-size: 14px;
+    color: #ccc;
 }
 
-#contacto_modal.active {
-    display: flex;
+/* Contacto y pie */
+.contenedor.contacto section,
+.contenedor.bymood section {
+    text-align: center;
+    padding: 40px 20px;
 }
 
-#contact-modal {
-    max-width: 500px;
-    width: 100%;
-    background: #1e1e1e;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+.contenedor.contacto h3,
+.contenedor.contacto ul.datos {
+    color: #fff;
 }
 
-#contact-modal h2 {
-    margin-top: 0;
-    color: #00ff9c;
-}
-
-#contact-modal input,
-#contact-modal textarea {
-    width: 100%;
-    padding: 15px;
-    margin: 10px 0;
-    background: #222;
-    border: 1px solid #333;
-    border-radius: 6px;
-    color: #ddd;
-}
-
-#contact-modal .ui-button {
+.contenedor.contacto ul.iconos li {
     display: inline-block;
-    padding: 10px 30px;
-    background: #00ff9c;
-    color: #111;
-    text-transform: uppercase;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background 0.3s;
+    margin: 0 10px;
 }
 
-#contact-modal .ui-button:hover {
-    background: #00b3ff;
+.contenedor.bymood {
+    background: #000;
+    padding: 10px;
+    text-align: center;
+}
+
+a {
+    color: #1abc9c;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #16a085;
 }
