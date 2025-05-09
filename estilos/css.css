@@ -1,60 +1,4 @@
-/* RESET BÁSICO */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* FONDO GLOBAL Y TIPOGRAFÍA */
-body {
-    font-family: 'Montserrat', sans-serif;
-    background-color: #000; /* Fondo negro global */
-    color: #fff;
-    line-height: 1.6;
-    overflow-x: hidden;
-}
-
-/* TIPOGRAFÍA GENERAL */
-h1, h2, h3, h4, h5, h6,
-p, a, li {
-    color: #fff;
-}
-
-/* ENLACES */
-a {
-    color: inherit;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-a:hover {
-    color: #00ffff;
-    opacity: 0.8;
-}
-
-/* IMÁGENES */
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-}
-
-/* CONTENEDORES Y SECCIONES */
-.contenedor {
-    position: relative;
-    width: 100%;
-    min-height: 100vh;
-    padding: 80px 20px;
-    box-sizing: border-box;
-    background-color: transparent;
-}
-
-section {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-/* ===== HOME ===== */
+/* LOGO CENTRAL (HOME) */
 .contenedor.home {
     display: flex;
     align-items: center;
@@ -67,280 +11,97 @@ section {
 
 .contenedor.home .logo-central {
     z-index: 2;
-    max-width: 300px;
+    max-width: 500px; /* Aumentamos tamaño */
+    margin: 0 auto;
 }
 
-/* ===== MENÚ LATERAL ===== */
-.cd-nav-trigger {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 1001;
-    display: inline-block;
-    height: 54px;
-    width: 54px;
-    cursor: pointer;
-    text-indent: 100%;
-    white-space: nowrap;
-    overflow: hidden;
-}
-
-.cd-nav-trigger .cd-nav-icon {
-    height: 100%;
+.contenedor.home .logo-central img {
     width: 100%;
-    background: url('../img/menu-icon.svg') no-repeat center center;
-    background-size: contain;
-}
-
-.cd-nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background: rgba(0,0,0,0.95);
-    z-index: 1000;
-    visibility: hidden;
-    opacity: 0;
-    transition: opacity 0.3s, visibility 0.3s;
-}
-
-.cd-nav.open {
-    visibility: visible;
-    opacity: 1;
-}
-
-.cd-navigation-wrapper {
-    display: flex;
-    justify-content: space-between;
-    padding: 60px;
-    height: 100%;
-    box-sizing: border-box;
-    color: white;
-}
-
-.cd-half-block {
-    width: 45%;
-}
-
-.cd-half-block nav ul,
-.cd-contact-info {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.cd-half-block nav ul li,
-.cd-contact-info li {
-    margin-bottom: 15px;
-    font-size: 18px;
-}
-
-.cd-contact-info li span {
+    height: auto;
     display: block;
+    margin: 0 auto;
 }
 
-.cd-half-block a {
-    color: white;
-    text-decoration: none;
-    transition: color 0.2s;
+/* ===== PARADOXIA BOTONES ===== */
+.contenedor.paradoxia {
+    padding: 80px 20px;
+    text-align: center;
 }
 
-.cd-half-block a:hover {
-    color: #f0c040;
-}
-
-/* ===== SERVICIOS (TARJETAS) ===== */
-.contenedor.servicios section > ul {
+.contenedor.paradoxia .botones {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
+    flex-wrap: wrap;
     gap: 30px;
     list-style: none;
     padding: 0;
+    margin: 40px 0;
 }
 
-.contenedor.servicios section > ul > li {
+.contenedor.paradoxia .botones li {
     background: rgba(30, 30, 30, 0.85);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 12px;
-    width: 280px;
-    padding: 20px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    padding: 30px 20px;
+    width: 220px;
+    text-align: center;
+    cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.contenedor.servicios section > ul > li:hover {
+.contenedor.paradoxia .botones li:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 25px rgba(0,0,0,0.7);
 }
 
-.contenedor.servicios h2 {
-    text-align: center;
+.contenedor.paradoxia .botones li a {
     font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    margin-top: 10px;
+    transition: color 0.3s;
+}
+
+.contenedor.paradoxia .botones li a:hover,
+.contenedor.paradoxia .botones li a.active {
+    color: #f0c040;
+}
+
+/* ÍCONOS MINIMALISTAS */
+.contenedor.paradoxia .botones li .icon {
+    font-size: 40px;
+    color: #f0c040;
     margin-bottom: 10px;
-    color: #f0c040;
 }
 
-.contenedor.servicios .texto li {
-    font-size: 15px;
-    line-height: 1.6;
-    color: #ddd;
+/* TEXTOS */
+.contenedor.paradoxia .textos {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 900px;
+    text-align: left;
 }
 
-/* ===== CASOS ===== */
-.contenedor.casos {
-    text-align: center;
-    padding: 80px 20px;
-    background-color: transparent;
-}
-
-.contenedor.casos h3 {
-    font-size: 32px;
-    margin-bottom: 40px;
-    color: #f0c040;
-}
-
-.quotes-wrapper {
-    margin-bottom: 50px;
-    position: relative;
-    min-height: 120px;
-}
-
-.quotes p.quote {
+.contenedor.paradoxia .textos li {
     display: none;
-    font-size: 18px;
-    line-height: 1.6;
-    padding: 0 30px;
-    font-style: italic;
     opacity: 0;
-    transition: opacity 0.4s ease-in-out;
+    transition: opacity 0.5s ease-in-out;
 }
 
-.quotes p.quote.active {
+.contenedor.paradoxia .textos li.active {
     display: block;
     opacity: 1;
 }
 
-.client-list {
-    list-style: none;
-    padding: 0;
-    margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-}
-
-.client-list li {
-    width: 140px;
-    cursor: pointer;
-    text-align: center;
-    transition: transform 0.3s ease;
-    padding: 10px;
-    border-radius: 10px;
-    background-color: rgba(30,30,30,0.85);
-    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-}
-
-.client-list li:hover {
-    transform: translateY(-5px);
-    background-color: rgba(50,50,50,0.9);
-}
-
-.client-list li.active {
-    border: 2px solid #f0c040;
-}
-
-/* ===== NOSOTROS ===== */
-.contenedor.ego {
-    position: relative;
-    background: transparent;
-    padding: 80px 20px;
-    overflow: hidden;
-    text-align: center;
-}
-
-#particles-js-nosotros {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 0;
-    opacity: 0.2;
-}
-
-.slider {
-    position: relative;
-    z-index: 2;
-    margin-top: 40px;
-}
-
-.content_slider_wrapper {
-    position: relative;
-    width: 100%;
-    margin: 0 auto;
-    max-width: 980px;
-}
-
-/* ===== CONTACTO ===== */
-.contenedor.contacto {
-    text-align: center;
-    padding: 80px 20px;
-    background-color: transparent;
-}
-
-.contenedor.contacto h3 {
-    font-size: 28px;
-    margin-bottom: 30px;
-}
-
-.contenedor.contacto .iconos {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-bottom: 30px;
-}
-
-.contenedor.contacto .icono {
-    font-size: 26px;
-    cursor: pointer;
-    transition: color 0.3s ease;
-}
-
-.contenedor.contacto .icono:hover {
-    color: #00bcd4;
-}
-
-.contenedor.contacto .datos {
-    list-style: none;
-    padding: 0;
-    font-size: 14px;
-    line-height: 1.8;
-    color: #ccc;
-}
-
-#sarasa-map {
-    width: 100%;
-    height: 300px;
-    margin-top: 40px;
-    position: relative;
-}
-
-/* ===== BYMOOD FOOTER ===== */
-.contenedor.bymood {
-    background-color: #000;
-    text-align: center;
-    padding: 20px;
-}
-
-.contenedor.bymood img {
-    max-height: 40px;
-    opacity: 0.6;
-    transition: opacity 0.3s;
-}
-
-.contenedor.bymood img:hover {
-    opacity: 1;
+.contenedor.paradoxia .textos p {
+    margin-bottom: 20px;
+    font-size: 17px;
+    line-height: 1.6;
+    color: #ddd;
 }
