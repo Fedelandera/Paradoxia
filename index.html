@@ -1,249 +1,310 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <title>Paradoxia</title>
-
-    <!-- Compatibilidad con IE -->
-    <!--[if lt IE 9]>
-    <script src="libs/html5shiv/src/html5shiv.js"></script>
-    <![endif]-->
-    <!--[if gte IE 9]>
-    <style type="text/css">
-        .gradient {
-            filter: none;
-        }
-    </style>
-    <![endif]-->
-
-    <!-- Particles.js -->
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-
-    <!-- Menú Lateral y estilos -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Estilos y Fuentes -->
     <link rel="stylesheet" href="libs/full-scren-pushing-navigation/css/style.css">
-    <link rel="stylesheet" href="estilos/css.css" media="all">
-    <!-- Font Awesome -->
+    <link rel="stylesheet" href="estilos/css.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Quicksand:300,400,700|Dosis:400,200,300,500,600,700,800" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <style>
-        /* === BASE === */
+        /* Pequeños ajustes para la estética */
         body {
+            background-color: #000;
+            color: #fff;
             font-family: 'Montserrat', sans-serif;
             margin: 0;
-            background: radial-gradient(ellipse at center, #0a2e36 0%, #000000 100%);
-            color: #ffffff;
-            overflow-x: hidden;
+            padding: 0;
         }
-
-        h1, h2, h3 {
-            font-family: 'Bebas Neue', sans-serif;
-            letter-spacing: 2px;
-            color: #a8ff60;
-            text-align: center;
-        }
-
-        /* === LOGO CENTRAL === */
         .logo-central {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 10;
             text-align: center;
+            margin-top: 100px;
         }
-
         .logo-central img {
             width: 250px;
-            max-width: 80%;
+            max-width: 90%;
             height: auto;
-            filter: drop-shadow(0 0 15px rgba(0, 255, 0, 0.6));
-            transition: transform 0.3s ease;
         }
-
-        .logo-central img:hover {
-            transform: scale(1.05);
-        }
-
-        @media (max-width: 600px) {
-            .logo-central img {
-                width: 180px;
-            }
-        }
-
-        /* === Particles full height === */
-        #particles-js {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            z-index: 0;
-            top: 0;
-            left: 0;
-        }
-
-        /* === Otros ajustes === */
-        .contenedor.home {
+        .contenedor {
             position: relative;
-            min-height: 100vh;
-            overflow: hidden;
+            padding: 80px 20px;
         }
     </style>
 </head>
-
 <body>
 
-    <!-- MENU LATERAL -->
-    <a href="#cd-nav" class="cd-nav-trigger">Menu
-        <span class="cd-nav-icon"></span>
-        <svg x="0px" y="0px" width="54px" height="54px" viewBox="0 0 54 54">
-            <circle fill="transparent" stroke="#656e79" stroke-width="1" cx="27" cy="27" r="25"
-                stroke-dasharray="157 157" stroke-dashoffset="157"></circle>
-        </svg>
-    </a>
+<!-- MENU LATERAL -->
+<a href="#cd-nav" class="cd-nav-trigger">Menu
+    <span class="cd-nav-icon"></span>
+    <svg width="54px" height="54px" viewBox="0 0 54 54">
+        <circle fill="transparent" stroke="#656e79" stroke-width="1" cx="27" cy="27" r="25" stroke-dasharray="157 157" stroke-dashoffset="157"></circle>
+    </svg>
+</a>
 
-    <div id="cd-nav" class="cd-nav">
-        <div class="cd-navigation-wrapper">
-            <div class="cd-half-block principal">
-                <nav>
-                    <ul class="links cd-primary-nav">
-                        <li class="item home cd-nav-trigger2"><a href="#home">Inicio</a></li>
-                        <li class="item cd-nav-trigger2"><a href="#paradoxia">Paradoxia</a></li>
-                        <li class="item cd-nav-trigger2"><a href="#servicios">Servicios</a></li>
-                        <li class="item cd-nav-trigger2"><a href="#casos">Casos</a></li>
-                        <li class="item cd-nav-trigger2"><a href="#nosotros">Nosotros</a></li>
-                        <li class="item cd-nav-trigger2"><a href="#contacto">Contacto</a></li>
-                    </ul>
-                </nav>
-            </div>
-            <div class="cd-half-block secundario">
-                <address>
-                    <ul class="cd-contact-info">
-                        <li><a href="mailto:hola@paradoxia.com.ar">hola@paradoxia.com.ar</a></li>
-                        <li>+54 11 4792 6867</li>
-                        <li>
-                            <span>Manuel Aguirre 646</span>
-                            <span>CP 1640</span>
-                            <span>Acassuso - San Isidro</span>
-                        </li>
-                    </ul>
-                </address>
-            </div>
+<div id="cd-nav" class="cd-nav">
+    <div class="cd-navigation-wrapper">
+        <div class="cd-half-block principal">
+            <nav>
+                <ul class="links cd-primary-nav">
+                    <li class="item home cd-nav-trigger2"><a href="#home">Inicio</a></li>
+                    <li class="item cd-nav-trigger2"><a href="#paradoxia">Paradoxia</a></li>
+                    <li class="item cd-nav-trigger2"><a href="#servicios">Servicios</a></li>
+                    <li class="item cd-nav-trigger2"><a href="#casos">Casos</a></li>
+                    <li class="item cd-nav-trigger2"><a href="#nosotros">Nosotros</a></li>
+                    <li class="item cd-nav-trigger2"><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="cd-half-block secundario">
+            <address>
+                <ul class="cd-contact-info">
+                    <li><a href="mailto:hola@paradoxia.com.ar">hola@paradoxia.com.ar</a></li>
+                    <li>+54 11 4792 6867</li>
+                    <li>
+                        <span>Manuel Aguirre 646</span>
+                        <span>CP 1640</span>
+                        <span>Acassuso - San Isidro</span>
+                    </li>
+                </ul>
+            </address>
         </div>
     </div>
+</div>
 
-    <!-- HOME -->
-    <div class="contenedor home" id="home">
-        <div id="particles-js"></div>
-        <div class="logo-central">
-            <img src="img/logo_paradoxia.png" alt="Paradoxia Logo">
+<!-- HOME SECTION -->
+<div class="contenedor home" id="home">
+    <div id="particles-js"></div>
+    <div class="logo-central">
+        <img src="img/logo_paradoxia.png" alt="Paradoxia Logo">
+    </div>
+</div>
+
+<!-- PARADOXIA SECTION -->
+<div class="contenedor paradoxia" id="paradoxia">
+    <section>
+        <ul class="botones">
+            <li class="analisis"><h1><a href="javascript:;" class="active">Análisis</a></h1></li>
+            <li class="comunicacion"><h1><a href="javascript:;">Comunicación</a></h1></li>
+            <li class="medicion"><h1><a href="javascript:;">Medición</a></h1></li>
+        </ul>
+        <ul class="textos">
+            <li class="analisis active">
+                <p>Para determinar la estrategia a adoptar con cada cliente, el primer paso es la observación. Estamos convencidos de que conocer todos los elementos que nos brinda el medio sobre aquello que buscamos difundir, mejora nuestra estrategia y aumenta su efectividad.</p>
+                <p><strong>Metodología: monitoreo, capacitaciones, análisis de tendencias y más.</strong></p>
+            </li>
+            <li class="comunicacion">
+                <p><strong>Construimos la identidad de nuestros clientes y expandimos su alcance. Gestionamos y medimos cada estrategia para sostener y alimentar la relación con sus audiencias.</strong></p>
+            </li>
+            <li class="medicion">
+                <p>El análisis de métricas clave es el pilar de nuestra metodología. Observamos las variables más importantes y cruzamos datos para encontrar puntos críticos y mejorar continuamente.</p>
+            </li>
+        </ul>
+    </section>
+</div>
+
+<!-- SERVICIOS SECTION -->
+<div class="contenedor servicios" id="servicios">
+    <section>
+        <ul>
+            <li class="redes_sociales">
+                <div class="hover gradient"><div id="particles-js-1"></div></div>
+                <div class="contenidos">
+                    <div class="boton"><h2><span>Redes</span> <span>Sociales</span></h2></div>
+                    <ul class="texto">
+                        <li>Community Management</li>
+                        <li>Engagement & Identidades Digitales</li>
+                        <li>Campañas Promocionadas</li>
+                    </ul>
+                </div>
+            </li>
+            <li class="com_gobierno">
+                <div class="hover gradient"><div id="particles-js-2"></div></div>
+                <div class="contenidos">
+                    <div class="boton"><h2><span>Comunicación</span> <span>de Gobierno</span></h2></div>
+                    <ul class="texto">
+                        <li>Difusión de Planes y Políticas</li>
+                        <li>Comunicación de Crisis</li>
+                        <li>Asuntos Públicos y Prensa</li>
+                    </ul>
+                </div>
+            </li>
+            <li class="camp_electorales">
+                <div class="hover gradient"><div id="particles-js-3"></div></div>
+                <div class="contenidos">
+                    <div class="boton"><h2><span>Campañas</span> <span>Electorales</span></h2></div>
+                    <ul class="texto">
+                        <li>Planificación Estratégica</li>
+                        <li>Difusión y Asesoramiento Integral</li>
+                        <li>Relaciones Públicas</li>
+                    </ul>
+                </div>
+            </li>
+            <li class="com_empresarial">
+                <div class="hover gradient"><div id="particles-js-4"></div></div>
+                <div class="contenidos">
+                    <div class="boton"><h2><span>Comunicación</span> <span>Empresarial</span></h2></div>
+                    <ul class="texto">
+                        <li>Estrategia & Gestión</li>
+                        <li>Reputación Corporativa</li>
+                        <li>Comunicación Interna</li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </section>
+</div>
+
+<!-- CASOS SECTION -->
+<div class="contenedor casos" id="casos">
+    <section>
+        <h3>Casos de Éxito</h3>
+        <div class="quotes-wrapper">
+            <div class="quotes">
+                <p class="quote active" id="quote1">“Paradoxia nos ayudó a transformar nuestra comunicación digital y alcanzar nuevos niveles de engagement.”</p>
+                <p class="quote" id="quote2">“Gracias a Paradoxia, logramos establecer una estrategia digital clara y efectiva para nuestro gobierno local.”</p>
+                <p class="quote" id="quote3">“Excelente equipo, comprometido y con resultados comprobables en poco tiempo.”</p>
+            </div>
         </div>
-    </div>
+        <ul class="client-list">
+            <li data-class="quote1" class="quote1 active"><strong>Damián Szvalb</strong><br><span>Provincia Net</span></li>
+            <li data-class="quote2" class="quote2"><strong>Alejandra Martínez</strong><br><span>Edesur</span></li>
+            <li data-class="quote3" class="quote3"><strong>Fernando Cotillo</strong><br><span>Gobierno de Santa Cruz</span></li>
+        </ul>
+    </section>
+</div>
 
-    <!-- SECCIÓN PARADOXIA -->
-    <div class="contenedor paradoxia" id="paradoxia">
-        <section>
-            <h2>¿Qué es Paradoxia?</h2>
-            <p style="max-width: 800px; margin: 0 auto; text-align: center; line-height: 1.6;">
-                Somos una consultora especializada en comunicación política y empresarial, con un enfoque innovador y estratégico. Nuestro equipo combina análisis profundo, creatividad y tecnología para lograr los mejores resultados para cada cliente.
-            </p>
-        </section>
-    </div>
+<!-- NOSOTROS SECTION -->
+<div class="contenedor ego" id="nosotros">
+    <section>
+        <div id="particles-js-nosotros"></div>
+        <div class="slider">
+            <div class="content_slider_wrapper" id="slider1">
+                <div class="circle_slider_text_wrapper active" id="sw0">
+                    <div class="content_slider_text_block_wrap">
+                        <h3>Federico Landera</h3>
+                        <span>Director</span>
+                        <span><strong>E-mail:</strong> <a href="mailto:federico.landera@paradoxia.com.ar">federico.landera@paradoxia.com.ar</a></span>
+                    </div>
+                </div>
+                <div class="circle_slider_text_wrapper" id="sw1">
+                    <div class="content_slider_text_block_wrap">
+                        <h3>Federico Paolorossi</h3>
+                        <span>Director de Finanzas</span>
+                        <span><strong>E-mail:</strong> <a href="mailto:federico.paolorossi@paradoxia.com.ar">federico.paolorossi@paradoxia.com.ar</a></span>
+                    </div>
+                </div>
+                <div class="circle_slider_text_wrapper" id="sw2">
+                    <div class="content_slider_text_block_wrap">
+                        <h3>Damián Bo</h3>
+                        <span>Encargado de Comunicación</span>
+                        <span><strong>E-mail:</strong> <a href="mailto:damian.bo@paradoxia.com.ar">damian.bo@paradoxia.com.ar</a></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
 
-    <!-- FOOTER SIMPLE -->
-    <footer style="text-align: center; padding: 20px; font-size: 14px; background: #0a2e36;">
-        &copy; 2025 Paradoxia - Todos los derechos reservados
-    </footer>
+<!-- CONTACTO SECTION -->
+<div class="contenedor contacto" id="contacto">
+    <section>
+        <h3><span class="modal-open" style="cursor: pointer;">Contáctanos</span></h3>
+        <ul class="iconos">
+            <li class="icono fab fa-linkedin"></li>
+            <li class="icono fab fa-twitter"></li>
+            <li class="icono fab fa-facebook"></li>
+            <li class="icono fab fa-youtube"></li>
+        </ul>
+        <ul class="datos">
+            <li>Manuel Aguirre 646 - CP 1640</li>
+            <li>Acassuso - San Isidro</li>
+            <li>&nbsp;</li>
+            <li>Tel: +54 11 4792 6867</li>
+            <li class="min">hola@paradoxia.com.ar</li>
+        </ul>
+    </section>
+</div>
 
-    <!-- ParticlesJS Config -->
-    <script>
-        particlesJS("particles-js", {
-            "particles": {
-                "number": {
-                    "value": 100,
-                    "density": {
-                        "enable": true,
-                        "value_area": 800
-                    }
-                },
-                "color": {
-                    "value": "#00ff99"
-                },
-                "shape": {
-                    "type": "circle",
-                    "stroke": {
-                        "width": 0,
-                        "color": "#000000"
-                    }
-                },
-                "opacity": {
-                    "value": 0.5,
-                    "random": true
-                },
-                "size": {
-                    "value": 3,
-                    "random": true
-                },
-                "line_linked": {
-                    "enable": true,
-                    "distance": 150,
-                    "color": "#00ff99",
-                    "opacity": 0.4,
-                    "width": 1
-                },
-                "move": {
-                    "enable": true,
-                    "speed": 4,
-                    "direction": "none",
-                    "random": false,
-                    "straight": false,
-                    "out_mode": "out",
-                    "bounce": false
-                }
+<!-- BY MOOD FOOTER -->
+<div class="contenedor bymood" id="bymood">
+    <section style="height:40px; padding:10px; text-align:center;">
+        <a href="http://www.mood.com.ar" target="_blank">
+            <img src="img/bymood.png" alt="Mood logo" style="height:30px;">
+        </a>
+    </section>
+</div>
+
+<!-- SCRIPTS FINALES -->
+<script src="libs/particles/particles.min.js"></script>
+<script src="libs/particles/app.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="libs/slider/js/jquery.content_slider.min.js"></script>
+<script src="libs/slider/js/jquery.mousewheel.js"></script>
+<script src="libs/slider/js/jquery.prettyPhoto.js"></script>
+<script src="libs/slider/js/jquery.animate-colors.js"></script>
+<script src="libs/slider/js/additional_content.js"></script>
+<script src="libs/skrollr.min.js"></script>
+<script src="libs/full-scren-pushing-navigation/js/main.js"></script>
+
+<script>
+    // Partículas para la sección Nosotros
+    particlesJS("particles-js-nosotros", {
+        "particles": {
+            "number": {"value": 60, "density": {"enable": true, "value_area": 800}},
+            "color": {"value": "#00ff99"},
+            "shape": {"type": "circle"},
+            "opacity": {"value": 0.3},
+            "size": {"value": 4, "random": true},
+            "line_linked": {"enable": true, "distance": 150, "color": "#00ff99", "opacity": 0.4, "width": 1},
+            "move": {"enable": true, "speed": 2}
+        },
+        "interactivity": {
+            "events": {
+                "onhover": {"enable": true, "mode": "grab"},
+                "onclick": {"enable": true, "mode": "push"}
             },
-            "interactivity": {
-                "detect_on": "canvas",
-                "events": {
-                    "onhover": {
-                        "enable": true,
-                        "mode": "grab"
-                    },
-                    "onclick": {
-                        "enable": true,
-                        "mode": "push"
-                    },
-                    "resize": true
-                },
-                "modes": {
-                    "grab": {
-                        "distance": 140,
-                        "line_linked": {
-                            "opacity": 1
-                        }
-                    },
-                    "bubble": {
-                        "distance": 400,
-                        "size": 40,
-                        "duration": 2,
-                        "opacity": 8,
-                        "speed": 3
-                    },
-                    "repulse": {
-                        "distance": 200,
-                        "duration": 0.4
-                    },
-                    "push": {
-                        "particles_nb": 4
-                    },
-                    "remove": {
-                        "particles_nb": 2
-                    }
-                }
-            },
-            "retina_detect": true
-        });
-    </script>
+            "modes": {
+                "grab": {"distance": 140, "line_linked": {"opacity": 1}},
+                "push": {"particles_nb": 4}
+            }
+        },
+        "retina_detect": true
+    });
 
-</body>
-</html>
+    // Slider en Nosotros
+    $('#slider1').content_slider({
+        map: [
+            { image: 'img/nosotros/Federico-Landera.jpg' },
+            { image: 'img/nosotros/Fede-Paolorossi.jpg' },
+            { image: 'img/nosotros/Damian-Bo.jpg' }
+        ],
+        max_shown_items: 3,
+        hv_switch: 0,
+        active_item: 0,
+        wrapper_text_max_height: 450,
+        border_radius: -1,
+        automatic_height_resize: 1,
+        big_pic_width: 200,
+        big_pic_height: 200
+    });
+
+    // Abrir modal de contacto
+    $(".modal-open").on("click", function() {
+        $("#contacto_modal").addClass("active");
+    });
+    $(".modal-close, #contact-modal-cancel").on("click", function() {
+        $("#contacto_modal").removeClass("active");
+    });
+
+    // Quotes (Casos)
+    $(".client-list li").on("mouseenter", function() {
+        var target = $(this).data("class");
+        $(".client-list li").removeClass("active");
+        $(this).addClass("active");
+        $(".quotes p.quote").removeClass("active");
+        $("#" + target).addClass("active");
+    });
+</script>
