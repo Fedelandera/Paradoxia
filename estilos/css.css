@@ -1,124 +1,51 @@
-/* ===== GENERAL ===== */
+/* =======================
+   Reset y Base
+========================== */
 body {
     font-family: 'Montserrat', sans-serif;
-    background: #000;
-    color: #ccc;
     margin: 0;
     padding: 0;
+    background-color: #111;
+    color: #ddd;
 }
 
-/* ===== LOGO HOME ===== */
+/* =======================
+   HOME SECTION
+========================== */
+.contenedor.home {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background: url('img/fondo_galaxia.png') no-repeat center center / cover;
+}
+
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
 .logo-central {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
     text-align: center;
-    padding: 100px 20px;
 }
 
 .logo-central img {
-    max-width: 300px;
-    width: 100%;
+    max-width: 400px;
+    width: 80%;
     height: auto;
-    display: block;
-    margin: 0 auto;
 }
 
-/* ===== MENÚ LATERAL ===== */
-.cd-nav-trigger {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 1001;
-    width: 54px;
-    height: 54px;
-    cursor: pointer;
-    background: none;
-    border: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.cd-nav-trigger .cd-nav-icon {
-    position: relative;
-    width: 30px;
-    height: 20px;
-}
-
-.cd-nav-trigger .cd-nav-icon::before,
-.cd-nav-trigger .cd-nav-icon::after,
-.cd-nav-trigger .cd-nav-icon span {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 3px;
-    background-color: #fff;
-    transition: all 0.3s;
-    border-radius: 2px;
-}
-
-.cd-nav-trigger .cd-nav-icon::before {
-    top: 0;
-}
-
-.cd-nav-trigger .cd-nav-icon::after {
-    bottom: 0;
-}
-
-.cd-nav-trigger .cd-nav-icon span {
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-.cd-nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background: rgba(0,0,0,0.95);
-    z-index: 1000;
-    visibility: hidden;
-    opacity: 0;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
-}
-
-.cd-nav.open {
-    visibility: visible;
-    opacity: 1;
-}
-
-.cd-navigation-wrapper {
-    display: flex;
-    justify-content: space-between;
-    height: 100%;
-    padding: 60px;
-    box-sizing: border-box;
-    color: white;
-}
-
-.cd-half-block nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.cd-half-block nav ul li {
-    margin-bottom: 20px;
-    font-size: 18px;
-}
-
-.cd-half-block nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-.cd-half-block nav ul li a:hover {
-    color: #f0c040;
-}
-
-/* ===== PARADOXIA + SERVICIOS (compartimentos) ===== */
-.contenedor paradoxia section > ul,
-.contenedor.servicios section > ul {
+/* =======================
+   PARADOXIA SECTION
+========================== */
+.contenedor.paradoxia section > ul {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -128,8 +55,7 @@ body {
     margin: 40px 0;
 }
 
-.contenedor paradoxia section > ul > li,
-.contenedor servicios section > ul > li {
+.contenedor.paradoxia section > ul > li {
     width: 320px;
     background: #1e1e1e;
     border-radius: 12px;
@@ -141,126 +67,242 @@ body {
     flex-direction: column;
 }
 
-.contenedor paradoxia section > ul > li:hover,
-.contenedor servicios section > ul > li:hover {
+.contenedor.paradoxia section > ul > li:hover {
     transform: translateY(-8px);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
 
-.contenedor paradoxia section > ul > li .header,
-.contenedor servicios section > ul > li .header {
-    background: linear-gradient(135deg, #4BB8E7, #2274A6);
+.contenedor.paradoxia section > ul > li h1 {
+    font-size: 1.5em;
+    text-align: center;
+    background: linear-gradient(45deg, #00ff9c, #00b3ff);
     padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.contenedor paradoxia section > ul > li .header .icon,
-.contenedor servicios section > ul > li .header .icon {
-    font-size: 40px;
-    color: #fff;
-    margin-bottom: 10px;
-}
-
-.contenedor paradoxia section > ul > li .header h2,
-.contenedor servicios section > ul > li .header h2 {
-    font-size: 20px;
-    font-weight: 700;
     color: #fff;
     margin: 0;
 }
 
-.contenedor paradoxia section > ul > li .texto,
-.contenedor servicios section > ul > li .texto {
+.contenedor.paradoxia section > ul > li p {
     padding: 20px;
-    font-size: 15px;
+    font-size: 0.95em;
+    line-height: 1.5;
     color: #ccc;
-    line-height: 1.6;
-    text-align: left;
 }
 
-/* ===== CASOS DE ÉXITO ===== */
-.contenedor.casos {
-    padding: 80px 20px;
+/* =======================
+   SERVICIOS SECTION
+========================== */
+.contenedor.servicios section > ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    list-style: none;
+    padding: 0;
+    margin: 40px 0;
+}
+
+.contenedor.servicios section > ul > li {
+    width: 320px;
+    background: #1e1e1e;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+}
+
+.contenedor.servicios section > ul > li:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.contenedor.servicios section > ul > li h2 {
+    font-size: 1.5em;
     text-align: center;
+    background: linear-gradient(45deg, #00ff9c, #00b3ff);
+    padding: 20px;
+    color: #fff;
+    margin: 0;
 }
 
+.contenedor.servicios section > ul > li ul.texto {
+    padding: 20px;
+    list-style: none;
+    margin: 0;
+}
+
+.contenedor.servicios section > ul > li ul.texto li {
+    font-size: 0.95em;
+    line-height: 1.5;
+    color: #ccc;
+    margin-bottom: 10px;
+}
+
+/* =======================
+   MENU LATERAL
+========================== */
+.cd-nav-trigger {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 999;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid #ddd;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cd-nav-trigger span,
+.cd-nav-trigger span::before,
+.cd-nav-trigger span::after {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: #ddd;
+    transition: all 0.3s;
+    position: relative;
+}
+
+.cd-nav-trigger span::before {
+    transform: translateY(-6px);
+}
+
+.cd-nav-trigger span::after {
+    transform: translateY(4px);
+}
+
+/* =======================
+   CASOS DE ÉXITO
+========================== */
 .contenedor.casos h3 {
-    font-size: 32px;
-    margin-bottom: 40px;
-    color: #fff;
-    font-weight: 700;
-    text-transform: uppercase;
+    text-align: center;
+    margin-top: 40px;
+    font-size: 2em;
+    color: #00ff9c;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
 }
 
 .quotes-wrapper {
+    max-width: 800px;
     margin-bottom: 40px;
 }
 
 .quotes p.quote {
     display: none;
-    font-size: 18px;
-    line-height: 1.6;
-    color: #ccc;
-    font-style: italic;
-    transition: opacity 0.4s ease-in-out;
+    font-size: 1.1em;
+    color: #ddd;
+    text-align: center;
+    padding: 20px;
+    border-left: 4px solid #00ff9c;
+    background: #1e1e1e;
+    border-radius: 8px;
 }
 
 .quotes p.quote.active {
     display: block;
-    opacity: 1;
 }
 
 .client-list {
-    list-style: none;
-    padding: 0;
-    margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 .client-list li {
-    width: 240px;
     background: #1e1e1e;
-    border-radius: 12px;
-    overflow: hidden;
-    cursor: pointer;
-    transition: transform 0.3s, box-shadow 0.3s;
-    text-align: center;
     padding: 20px;
+    border-radius: 8px;
+    width: 250px;
+    text-align: center;
+    color: #ccc;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
 }
 
 .client-list li:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 .client-list li.active {
-    border: 2px solid #2274A6;
+    border: 2px solid #00ff9c;
 }
 
-.client-list .author span {
-    display: block;
-    font-size: 14px;
-    color: #ccc;
-    margin-top: 10px;
+/* =======================
+   FORMULARIO DE CONTACTO
+========================== */
+#contacto_modal {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 999;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
 }
 
-.client-list .author span.title {
-    font-weight: bold;
-    font-size: 13px;
-    color: #f0c040;
-    margin-top: 5px;
+#contacto_modal.active {
+    display: flex;
 }
 
-/* ===== RESPONSIVE ===== */
-@media (max-width: 768px) {
-    .contenedor.paradoxia section > ul > li,
-    .contenedor.servicios section > ul > li,
-    .client-list li {
-        width: 90%;
-    }
+#contact-modal {
+    max-width: 500px;
+    width: 100%;
+    background: #1e1e1e;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+#contact-modal h2 {
+    margin-top: 0;
+    color: #00ff9c;
+}
+
+#contact-modal input,
+#contact-modal textarea {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    background: #222;
+    border: 1px solid #333;
+    border-radius: 6px;
+    color: #ddd;
+}
+
+#contact-modal .ui-button {
+    display: inline-block;
+    padding: 10px 30px;
+    background: #00ff9c;
+    color: #111;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#contact-modal .ui-button:hover {
+    background: #00b3ff;
 }
