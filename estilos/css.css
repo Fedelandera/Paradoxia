@@ -117,7 +117,7 @@ body {
 }
 
 /* ===== PARADOXIA + SERVICIOS (compartimentos) ===== */
-.contenedor.paradoxia section > ul,
+.contenedor paradoxia section > ul,
 .contenedor.servicios section > ul {
     display: flex;
     flex-wrap: wrap;
@@ -128,8 +128,8 @@ body {
     margin: 40px 0;
 }
 
-.contenedor.paradoxia section > ul > li,
-.contenedor.servicios section > ul > li {
+.contenedor paradoxia section > ul > li,
+.contenedor servicios section > ul > li {
     width: 320px;
     background: #1e1e1e;
     border-radius: 12px;
@@ -141,14 +141,14 @@ body {
     flex-direction: column;
 }
 
-.contenedor.paradoxia section > ul > li:hover,
-.contenedor.servicios section > ul > li:hover {
+.contenedor paradoxia section > ul > li:hover,
+.contenedor servicios section > ul > li:hover {
     transform: translateY(-8px);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
 
-.contenedor.paradoxia section > ul > li .header,
-.contenedor.servicios section > ul > li .header {
+.contenedor paradoxia section > ul > li .header,
+.contenedor servicios section > ul > li .header {
     background: linear-gradient(135deg, #4BB8E7, #2274A6);
     padding: 20px;
     display: flex;
@@ -156,23 +156,23 @@ body {
     align-items: center;
 }
 
-.contenedor.paradoxia section > ul > li .header .icon,
-.contenedor.servicios section > ul > li .header .icon {
+.contenedor paradoxia section > ul > li .header .icon,
+.contenedor servicios section > ul > li .header .icon {
     font-size: 40px;
     color: #fff;
     margin-bottom: 10px;
 }
 
-.contenedor.paradoxia section > ul > li .header h2,
-.contenedor.servicios section > ul > li .header h2 {
+.contenedor paradoxia section > ul > li .header h2,
+.contenedor servicios section > ul > li .header h2 {
     font-size: 20px;
     font-weight: 700;
     color: #fff;
     margin: 0;
 }
 
-.contenedor.paradoxia section > ul > li .texto,
-.contenedor.servicios section > ul > li .texto {
+.contenedor paradoxia section > ul > li .texto,
+.contenedor servicios section > ul > li .texto {
     padding: 20px;
     font-size: 15px;
     color: #ccc;
