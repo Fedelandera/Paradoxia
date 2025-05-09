@@ -116,21 +116,9 @@ body {
     color: #f0c040;
 }
 
-/* ===== CAJAS REUTILIZABLES (Paradoxia + Servicios) ===== */
-.cajas-section {
-    padding: 80px 20px;
-    text-align: center;
-}
-
-.cajas-section h3 {
-    font-size: 32px;
-    margin-bottom: 40px;
-    color: #fff;
-    font-weight: 700;
-    text-transform: uppercase;
-}
-
-.cajas-section ul {
+/* ===== PARADOXIA + SERVICIOS (compartimentos) ===== */
+.contenedor.paradoxia section > ul,
+.contenedor.servicios section > ul {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -140,7 +128,8 @@ body {
     margin: 40px 0;
 }
 
-.cajas-section ul li {
+.contenedor.paradoxia section > ul > li,
+.contenedor.servicios section > ul > li {
     width: 320px;
     background: #1e1e1e;
     border-radius: 12px;
@@ -152,12 +141,14 @@ body {
     flex-direction: column;
 }
 
-.cajas-section ul li:hover {
+.contenedor.paradoxia section > ul > li:hover,
+.contenedor.servicios section > ul > li:hover {
     transform: translateY(-8px);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
 
-.cajas-section ul li .header {
+.contenedor.paradoxia section > ul > li .header,
+.contenedor.servicios section > ul > li .header {
     background: linear-gradient(135deg, #4BB8E7, #2274A6);
     padding: 20px;
     display: flex;
@@ -165,20 +156,23 @@ body {
     align-items: center;
 }
 
-.cajas-section ul li .header .icon {
+.contenedor.paradoxia section > ul > li .header .icon,
+.contenedor.servicios section > ul > li .header .icon {
     font-size: 40px;
     color: #fff;
     margin-bottom: 10px;
 }
 
-.cajas-section ul li .header h2 {
+.contenedor.paradoxia section > ul > li .header h2,
+.contenedor.servicios section > ul > li .header h2 {
     font-size: 20px;
     font-weight: 700;
     color: #fff;
     margin: 0;
 }
 
-.cajas-section ul li .texto {
+.contenedor.paradoxia section > ul > li .texto,
+.contenedor.servicios section > ul > li .texto {
     padding: 20px;
     font-size: 15px;
     color: #ccc;
@@ -264,7 +258,8 @@ body {
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
-    .cajas-section ul li,
+    .contenedor.paradoxia section > ul > li,
+    .contenedor.servicios section > ul > li,
     .client-list li {
         width: 90%;
     }
