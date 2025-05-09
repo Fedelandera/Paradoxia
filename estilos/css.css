@@ -1,4 +1,4 @@
-/* LOGO CENTRAL (HOME) */
+/* 1️⃣ LOGO CENTRAL (HOME) */
 .contenedor.home {
     display: flex;
     align-items: center;
@@ -7,11 +7,13 @@
     text-align: center;
     background-color: #000;
     min-height: 100vh;
+    padding: 20px;
 }
 
 .contenedor.home .logo-central {
     z-index: 2;
-    max-width: 500px; /* Aumentamos tamaño */
+    max-width: 600px; /* Ampliamos */
+    width: 100%;
     margin: 0 auto;
 }
 
@@ -22,7 +24,7 @@
     margin: 0 auto;
 }
 
-/* ===== PARADOXIA BOTONES ===== */
+/* 2️⃣ BOTONES PARADOXIA (como SERVICIOS) */
 .contenedor.paradoxia {
     padding: 80px 20px;
     text-align: center;
@@ -30,31 +32,46 @@
 
 .contenedor.paradoxia .botones {
     display: flex;
-    justify-content: center;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 30px;
     list-style: none;
     padding: 0;
     margin: 40px 0;
 }
 
+/* Cada caja del botón */
 .contenedor.paradoxia .botones li {
-    background: rgba(30, 30, 30, 0.85);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    width: 320px; /* alargados */
+    background: #1e1e1e;
     border-radius: 12px;
-    padding: 30px 20px;
-    width: 220px;
-    text-align: center;
-    cursor: pointer;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
     display: flex;
     flex-direction: column;
-    align-items: center;
 }
 
 .contenedor.paradoxia .botones li:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.7);
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* Encabezado del botón */
+.contenedor.paradoxia .botones li .header {
+    background: linear-gradient(135deg, #2274A6, #4BB8E7);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.contenedor.paradoxia .botones li .icon {
+    font-size: 40px;
+    color: #fff;
+    margin-bottom: 10px;
 }
 
 .contenedor.paradoxia .botones li a {
@@ -62,8 +79,6 @@
     font-weight: 700;
     color: #fff;
     text-decoration: none;
-    display: block;
-    margin-top: 10px;
     transition: color 0.3s;
 }
 
@@ -72,36 +87,17 @@
     color: #f0c040;
 }
 
-/* ÍCONOS MINIMALISTAS */
-.contenedor.paradoxia .botones li .icon {
-    font-size: 40px;
-    color: #f0c040;
-    margin-bottom: 10px;
-}
-
-/* TEXTOS */
-.contenedor.paradoxia .textos {
-    list-style: none;
-    padding: 0;
-    margin: 0 auto;
-    max-width: 900px;
-    text-align: left;
-}
-
-.contenedor.paradoxia .textos li {
-    display: none;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-}
-
-.contenedor.paradoxia .textos li.active {
-    display: block;
-    opacity: 1;
-}
-
-.contenedor.paradoxia .textos p {
-    margin-bottom: 20px;
-    font-size: 17px;
+/* Contenido del botón */
+.contenedor.paradoxia .botones li .content {
+    padding: 20px;
+    color: #ccc;
+    font-size: 15px;
     line-height: 1.6;
-    color: #ddd;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .contenedor.paradoxia .botones li {
+        width: 90%;
+    }
 }
