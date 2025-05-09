@@ -45,14 +45,21 @@ body {
     align-items: center;
     justify-content: center;
     height: 100%;
-    pointer-events: none; /* <<< Agregamos esto */
+    width: 100%;
+    text-align: center;
 }
 
 .logo-central img {
-    max-width: 300px;
-    width: 80%;
+    max-width: 500px; /* Aumentamos el tamaño máximo */
+    width: 90%;
     height: auto;
     display: block;
+    margin: 0 auto;
+    transition: transform 0.3s ease;
+}
+
+.logo-central img:hover {
+    transform: scale(1.05); /* Le damos un leve efecto al pasar el cursor */
 }
 
 /* MENU LATERAL */
