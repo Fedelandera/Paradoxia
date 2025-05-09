@@ -1,48 +1,138 @@
-/* 1️⃣ LOGO CENTRAL (HOME) */
-.contenedor.home {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
+/* ===== GENERAL ===== */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: #000; /* Fondo general negro */
+    color: #ccc;
+    margin: 0;
+    padding: 0;
+}
+
+/* ===== LOGO HOME ===== */
+.logo-central {
     text-align: center;
-    background-color: #000;
-    min-height: 100vh;
-    padding: 20px;
+    padding: 100px 20px;
 }
 
-.contenedor.home .logo-central {
-    z-index: 2;
-    max-width: 600px; /* Ampliamos */
-    width: 100%;
-    margin: 0 auto;
-}
-
-.contenedor.home .logo-central img {
+.logo-central img {
+    max-width: 300px;
     width: 100%;
     height: auto;
     display: block;
     margin: 0 auto;
 }
 
-/* 2️⃣ BOTONES PARADOXIA (como SERVICIOS) */
+/* ===== MENÚ LATERAL ===== */
+.cd-nav-trigger {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1001;
+    width: 54px;
+    height: 54px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cd-nav-trigger .cd-nav-icon {
+    position: relative;
+    width: 30px;
+    height: 20px;
+}
+
+.cd-nav-trigger .cd-nav-icon::before,
+.cd-nav-trigger .cd-nav-icon::after,
+.cd-nav-trigger .cd-nav-icon span {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background-color: #fff;
+    transition: all 0.3s;
+    border-radius: 2px;
+}
+
+.cd-nav-trigger .cd-nav-icon::before {
+    top: 0;
+}
+
+.cd-nav-trigger .cd-nav-icon::after {
+    bottom: 0;
+}
+
+.cd-nav-trigger .cd-nav-icon span {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* NAV */
+.cd-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0,0,0,0.95);
+    z-index: 1000;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.cd-nav.open {
+    visibility: visible;
+    opacity: 1;
+}
+
+.cd-navigation-wrapper {
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    padding: 60px;
+    box-sizing: border-box;
+    color: white;
+}
+
+.cd-half-block nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.cd-half-block nav ul li {
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.cd-half-block nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.cd-half-block nav ul li a:hover {
+    color: #f0c040;
+}
+
+/* ===== PARADOXIA (Botones) ===== */
 .contenedor.paradoxia {
     padding: 80px 20px;
     text-align: center;
 }
 
-.contenedor.paradoxia .botones {
+.paradoxia-botones {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 30px;
-    list-style: none;
-    padding: 0;
-    margin: 40px 0;
+    margin-top: 40px;
 }
 
-/* Cada caja del botón */
-.contenedor.paradoxia .botones li {
-    width: 320px; /* alargados */
+.paradoxia-boton {
+    width: 320px;
     background: #1e1e1e;
     border-radius: 12px;
     overflow: hidden;
@@ -53,51 +143,182 @@
     flex-direction: column;
 }
 
-.contenedor.paradoxia .botones li:hover {
+.paradoxia-boton:hover {
     transform: translateY(-8px);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
 
-/* Encabezado del botón */
-.contenedor.paradoxia .botones li .header {
-    background: linear-gradient(135deg, #2274A6, #4BB8E7);
+.paradoxia-boton .header {
+    background: linear-gradient(135deg, #4BB8E7, #2274A6);
     padding: 20px;
     display: flex;
-    align-items: center;
-    justify-content: center;
     flex-direction: column;
+    align-items: center;
 }
 
-.contenedor.paradoxia .botones li .icon {
+.paradoxia-boton .header .icon {
     font-size: 40px;
     color: #fff;
     margin-bottom: 10px;
 }
 
-.contenedor.paradoxia .botones li a {
+.paradoxia-boton .header h2 {
     font-size: 20px;
     font-weight: 700;
     color: #fff;
-    text-decoration: none;
-    transition: color 0.3s;
+    margin: 0;
 }
 
-.contenedor.paradoxia .botones li a:hover,
-.contenedor.paradoxia .botones li a.active {
-    color: #f0c040;
-}
-
-/* Contenido del botón */
-.contenedor.paradoxia .botones li .content {
+.paradoxia-boton .texto {
     padding: 20px;
-    color: #ccc;
     font-size: 15px;
+    color: #ccc;
     line-height: 1.6;
+    text-align: left;
 }
 
-/* RESPONSIVE */
+/* ===== SERVICIOS ===== */
+.contenedor.servicios {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.contenedor.servicios section > ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    list-style: none;
+    padding: 0;
+    margin: 40px 0;
+}
+
+.contenedor.servicios section > ul > li {
+    width: 320px;
+    background: #1e1e1e;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+}
+
+.contenedor.servicios section > ul > li:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.contenedor.servicios .header {
+    background: linear-gradient(135deg, #4BB8E7, #2274A6);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contenedor.servicios .header .icon {
+    font-size: 40px;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.contenedor.servicios .header h2 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    margin: 0;
+}
+
+.contenedor.servicios .texto {
+    padding: 20px;
+    font-size: 15px;
+    color: #ccc;
+    line-height: 1.6;
+    text-align: left;
+}
+
+/* ===== CASOS DE ÉXITO ===== */
+.contenedor.casos {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.contenedor.casos h3 {
+    font-size: 32px;
+    margin-bottom: 40px;
+    color: #fff;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.quotes-wrapper {
+    margin-bottom: 40px;
+}
+
+.quotes p.quote {
+    display: none;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #ccc;
+    font-style: italic;
+    transition: opacity 0.4s ease-in-out;
+}
+
+.quotes p.quote.active {
+    display: block;
+    opacity: 1;
+}
+
+.client-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.client-list li {
+    width: 240px;
+    background: #1e1e1e;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+    padding: 20px;
+}
+
+.client-list li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+.client-list li.active {
+    border: 2px solid #2274A6;
+}
+
+.client-list .author span {
+    display: block;
+    font-size: 14px;
+    color: #ccc;
+    margin-top: 10px;
+}
+
+.client-list .author span.title {
+    font-weight: bold;
+    font-size: 13px;
+    color: #f0c040;
+    margin-top: 5px;
+}
+
+/* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
-    .contenedor.paradoxia .botones li {
+    .paradoxia-boton,
+    .contenedor.servicios section > ul > li {
         width: 90%;
     }
 }
