@@ -7,12 +7,22 @@ body {
     background: #000;
 }
 
-/* Fondo para el home con partículas */
+/* NUEVO: Fondo galaxia como capa independiente */
+.background-galaxia {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('/img/fondo_galaxia.png') no-repeat center center;
+    background-size: cover;
+    z-index: 0;
+}
+
+/* Fondo para el home con partículas (YA SIN background) */
 .contenedor.home {
     position: relative;
     height: 100vh;
-    background: url('/img/fondo_galaxia.png') no-repeat center center fixed;
-    background-size: cover;
     overflow: hidden;
 }
 
