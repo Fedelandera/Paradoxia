@@ -5,10 +5,9 @@ body {
     font-family: 'Montserrat', sans-serif;
     color: #fff;
     background: #000;
-    overflow-x: hidden;
 }
 
-/* NUEVO: Fondo galaxia como capa independiente */
+/* Fondo galaxia como capa independiente */
 .background-galaxia {
     position: absolute;
     top: 0;
@@ -20,16 +19,15 @@ body {
     z-index: 0;
 }
 
-/* Fondo para el home con partículas */
+/* Home con partículas */
 .contenedor.home {
     position: relative;
     height: 100vh;
-    overflow: visible;
+    overflow: hidden;
     background: transparent;
-    z-index: 1;
 }
 
-/* Particles.js */
+/* Partículas por encima del fondo */
 #particles-js {
     position: absolute;
     width: 100%;
@@ -64,51 +62,7 @@ body {
     transform: scale(1.05);
 }
 
-/* Transición visual suave entre secciones */
-.transicion-seccion {
-    width: 100%;
-    height: 120px;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), #0b0e13);
-    margin-top: -50px;
-    position: relative;
-    z-index: 2;
-}
-
-/* SEGUNDA SECCIÓN */
-.contenedor.paradoxia {
-    background: url('../img/fondo_paradoxia.png') no-repeat center top;
-    background-size: cover;
-    color: white;
-    padding: 60px 20px;
-    position: relative;
-    z-index: 1;
-}
-
-.contenedor.paradoxia h1,
-.contenedor.paradoxia p {
-    text-align: center;
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* Animación de entrada */
-.contenedor.paradoxia section {
-    animation: fadeInUp 1s ease-in-out;
-}
-
-@keyframes fadeInUp {
-    0% {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* MENU LATERAL */
+/* Menú lateral */
 .cd-nav-trigger {
     position: fixed;
     top: 30px;
@@ -190,7 +144,47 @@ body {
     color: #1abc9c;
 }
 
-/* Botones de secciones Paradoxia y Servicios */
+/* Transición visual entre secciones */
+.transicion-seccion {
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), #0b0e13);
+    margin-top: -5px;
+    z-index: 2;
+}
+
+/* Sección Paradoxia */
+.contenedor.paradoxia {
+    background: #0b0e13;
+    color: white;
+    padding: 60px 20px;
+    position: relative;
+}
+
+.contenedor.paradoxia section {
+    animation: fadeInUp 1s ease-in-out;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.contenedor.paradoxia h1, 
+.contenedor.paradoxia p {
+    text-align: center;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Botones tipo cards */
 .contenedor.paradoxia section > ul,
 .contenedor.servicios section > ul {
     display: flex;
@@ -239,7 +233,7 @@ body {
     color: #ccc;
 }
 
-/* Íconos */
+/* Íconos para cada bloque */
 .contenedor.paradoxia section > ul > li::before,
 .contenedor.servicios section > ul > li::before {
     content: '';
@@ -253,19 +247,26 @@ body {
 .contenedor.paradoxia section > ul > li.analisis::before {
     background-image: url('/img/icon_analisis.png');
 }
+
 .contenedor.paradoxia section > ul > li.comunicacion::before {
     background-image: url('/img/icon_comunicacion.png');
 }
+
 .contenedor.paradoxia section > ul > li.medicion::before {
     background-image: url('/img/icon_medicion.png');
 }
 
-/* Casos */
+/* Casos de éxito */
 .contenedor.casos .container {
     max-width: 1000px;
     margin: 0 auto;
     padding: 40px 20px;
     text-align: center;
+}
+
+.contenedor.casos h3 {
+    font-size: 28px;
+    margin-bottom: 30px;
 }
 
 .client-list {
@@ -290,7 +291,17 @@ body {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
 
-/* Contacto y pie */
+.client-list strong {
+    font-size: 18px;
+    color: #fff;
+}
+
+.client-list .title {
+    font-size: 14px;
+    color: #ccc;
+}
+
+/* Sección de contacto y pie */
 .contenedor.contacto section,
 .contenedor.bymood section {
     text-align: center;
@@ -300,6 +311,11 @@ body {
 .contenedor.contacto h3,
 .contenedor.contacto ul.datos {
     color: #fff;
+}
+
+.contenedor.contacto ul.iconos li {
+    display: inline-block;
+    margin: 0 10px;
 }
 
 .contenedor.bymood {
