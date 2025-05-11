@@ -5,6 +5,7 @@ body {
     font-family: 'Montserrat', sans-serif;
     color: #fff;
     background: #000;
+    overflow-x: hidden;
 }
 
 /* NUEVO: Fondo galaxia como capa independiente */
@@ -19,15 +20,16 @@ body {
     z-index: 0;
 }
 
-/* Fondo para el home con partículas (YA SIN background) */
+/* Fondo para el home con partículas */
 .contenedor.home {
     position: relative;
     height: 100vh;
-    overflow: hidden;
+    overflow: visible;
     background: transparent;
+    z-index: 1;
 }
 
-/* Particles.js debe estar encima del fondo */
+/* Particles.js */
 #particles-js {
     position: absolute;
     width: 100%;
@@ -50,7 +52,7 @@ body {
 }
 
 .logo-central img {
-    max-width: 800px; /* Aumentamos el tamaño máximo */
+    max-width: 800px;
     width: 90%;
     height: auto;
     display: block;
@@ -59,7 +61,50 @@ body {
 }
 
 .logo-central img:hover {
-    transform: scale(1.05); /* Le damos un leve efecto al pasar el cursor */
+    transform: scale(1.05);
+}
+
+/* Transición visual suave entre secciones */
+.transicion-seccion {
+    width: 100%;
+    height: 120px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), #0b0e13);
+    margin-top: -50px;
+    position: relative;
+    z-index: 2;
+}
+
+/* SEGUNDA SECCIÓN */
+.contenedor.paradoxia {
+    background: #0b0e13;
+    color: white;
+    padding: 60px 20px;
+    position: relative;
+    z-index: 3;
+}
+
+.contenedor.paradoxia h1,
+.contenedor.paradoxia p {
+    text-align: center;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Animación de entrada */
+.contenedor.paradoxia section {
+    animation: fadeInUp 1s ease-in-out;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* MENU LATERAL */
@@ -106,12 +151,10 @@ body {
     top: 8px;
 }
 
-/* Ocultar la navegación hasta que esté activa */
 .cd-nav {
     display: none;
 }
 
-/* Mostrar menú cuando se active */
 .cd-nav.active {
     display: block;
     position: fixed;
@@ -195,7 +238,7 @@ body {
     color: #ccc;
 }
 
-/* Íconos minimalistas */
+/* Íconos */
 .contenedor.paradoxia section > ul > li::before,
 .contenedor.servicios section > ul > li::before {
     content: '';
@@ -206,7 +249,6 @@ body {
     width: 60px;
 }
 
-/* Ejemplo para agregar un icono: personaliza según tus imágenes */
 .contenedor.paradoxia section > ul > li.analisis::before {
     background-image: url('/img/icon_analisis.png');
 }
@@ -223,11 +265,6 @@ body {
     margin: 0 auto;
     padding: 40px 20px;
     text-align: center;
-}
-
-.contenedor.casos h3 {
-    font-size: 28px;
-    margin-bottom: 30px;
 }
 
 .client-list {
@@ -252,16 +289,6 @@ body {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
 
-.client-list strong {
-    font-size: 18px;
-    color: #fff;
-}
-
-.client-list .title {
-    font-size: 14px;
-    color: #ccc;
-}
-
 /* Contacto y pie */
 .contenedor.contacto section,
 .contenedor.bymood section {
@@ -272,11 +299,6 @@ body {
 .contenedor.contacto h3,
 .contenedor.contacto ul.datos {
     color: #fff;
-}
-
-.contenedor.contacto ul.iconos li {
-    display: inline-block;
-    margin: 0 10px;
 }
 
 .contenedor.bymood {
@@ -292,45 +314,4 @@ a {
 
 a:hover {
     color: #16a085;
-}
-
-/* TRANSICIÓN ENTRE SECCIONES */
-.transicion-seccion {
-    width: 100%;
-    height: 100px;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), #0b0e13);
-    margin-top: -5px;
-    z-index: 2;
-}
-
-/* SEGUNDA SECCIÓN (Paradoxia) AJUSTADA */
-.contenedor.paradoxia {
-    background: #0b0e13; /* o probar con rgba(11, 14, 19, 0.95) */
-    color: white;
-    padding: 60px 20px;
-    position: relative;
-}
-
-.contenedor.paradoxia h1, 
-.contenedor.paradoxia p {
-    text-align: center;
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* Animación leve al ingresar */
-.contenedor.paradoxia section {
-    animation: fadeInUp 1s ease-in-out;
-}
-
-@keyframes fadeInUp {
-    0% {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
 }
