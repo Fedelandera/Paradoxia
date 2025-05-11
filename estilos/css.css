@@ -19,7 +19,7 @@ body {
     z-index: 0;
 }
 
-/* Home con partículas */
+/* Fondo para el home con partículas (sin fondo propio) */
 .contenedor.home {
     position: relative;
     height: 100vh;
@@ -27,7 +27,18 @@ body {
     background: transparent;
 }
 
-/* Partículas por encima del fondo */
+/* Gradiente fade out en home */
+.contenedor.home::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    height: 120px;
+    width: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, #0b0e13 100%);
+    z-index: 2;
+}
+
+/* Particles.js encima del fondo */
 #particles-js {
     position: absolute;
     width: 100%;
@@ -39,7 +50,7 @@ body {
 /* Logo centrado */
 .logo-central {
     position: relative;
-    z-index: 2;
+    z-index: 3;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -62,7 +73,7 @@ body {
     transform: scale(1.05);
 }
 
-/* Menú lateral */
+/* MENU LATERAL */
 .cd-nav-trigger {
     position: fixed;
     top: 30px;
@@ -144,21 +155,32 @@ body {
     color: #1abc9c;
 }
 
-/* Transición visual entre secciones */
+/* Transición visual entre home y secciones */
 .transicion-seccion {
     width: 100%;
-    height: 100px;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), #0b0e13);
-    margin-top: -5px;
+    height: 120px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, #0b0e13 100%);
+    margin-top: -80px;
+    position: relative;
     z-index: 2;
 }
 
-/* Sección Paradoxia */
+/* Contenedor Paradoxia (segunda sección) */
 .contenedor.paradoxia {
     background: #0b0e13;
     color: white;
-    padding: 60px 20px;
+    padding: 100px 20px 60px;
+    margin-top: -40px;
     position: relative;
+    z-index: 1;
+}
+
+.contenedor.paradoxia h1,
+.contenedor.paradoxia p {
+    text-align: center;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .contenedor.paradoxia section {
@@ -176,15 +198,7 @@ body {
     }
 }
 
-.contenedor.paradoxia h1, 
-.contenedor.paradoxia p {
-    text-align: center;
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* Botones tipo cards */
+/* Botones de secciones Paradoxia y Servicios */
 .contenedor.paradoxia section > ul,
 .contenedor.servicios section > ul {
     display: flex;
@@ -233,7 +247,7 @@ body {
     color: #ccc;
 }
 
-/* Íconos para cada bloque */
+/* Íconos minimalistas */
 .contenedor.paradoxia section > ul > li::before,
 .contenedor.servicios section > ul > li::before {
     content: '';
@@ -247,16 +261,14 @@ body {
 .contenedor.paradoxia section > ul > li.analisis::before {
     background-image: url('/img/icon_analisis.png');
 }
-
 .contenedor.paradoxia section > ul > li.comunicacion::before {
     background-image: url('/img/icon_comunicacion.png');
 }
-
 .contenedor.paradoxia section > ul > li.medicion::before {
     background-image: url('/img/icon_medicion.png');
 }
 
-/* Casos de éxito */
+/* Casos */
 .contenedor.casos .container {
     max-width: 1000px;
     margin: 0 auto;
@@ -301,7 +313,7 @@ body {
     color: #ccc;
 }
 
-/* Sección de contacto y pie */
+/* Contacto y pie */
 .contenedor.contacto section,
 .contenedor.bymood section {
     text-align: center;
