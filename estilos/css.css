@@ -76,11 +76,12 @@ body {
 
 /* SEGUNDA SECCIÓN */
 .contenedor.paradoxia {
-    background: #0b0e13;
+    background: url('../img/fondo_paradoxia.png') no-repeat center top;
+    background-size: cover;
     color: white;
     padding: 60px 20px;
     position: relative;
-    z-index: 3;
+    z-index: 1;
 }
 
 .contenedor.paradoxia h1,
