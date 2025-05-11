@@ -50,7 +50,7 @@ body {
 }
 
 .logo-central img {
-    max-width: 700px; /* Aumentamos el tamaño máximo */
+    max-width: 800px; /* Aumentamos el tamaño máximo */
     width: 90%;
     height: auto;
     display: block;
@@ -293,6 +293,7 @@ a {
 a:hover {
     color: #16a085;
 }
+
 /* TRANSICIÓN ENTRE SECCIONES */
 .transicion-seccion {
     width: 100%;
