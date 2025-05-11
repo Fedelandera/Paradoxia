@@ -175,14 +175,72 @@ body {
     z-index: 1;
 }
 
-.contenedor.paradoxia h1,
-.contenedor.paradoxia p {
-    text-align: center;
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
+/* Nueva estructura con íconos tipo pestaña */
+.botones-paradoxia {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    list-style: none;
+    padding: 0;
+    margin-bottom: 40px;
 }
 
+.botones-paradoxia li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    opacity: 0.6;
+}
+
+.botones-paradoxia li.active,
+.botones-paradoxia li:hover {
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+.botones-paradoxia li img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
+}
+
+.botones-paradoxia li h2 {
+    font-size: 18px;
+    margin: 0;
+    color: #fff;
+}
+
+.texto-paradoxia {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+    font-size: 16px;
+    color: #ccc;
+}
+
+.contenido-paradoxia {
+    display: none;
+    animation: fadeIn 0.5s ease;
+}
+
+.contenido-paradoxia.visible {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animación leve */
 .contenedor.paradoxia section {
     animation: fadeInUp 1s ease-in-out;
 }
@@ -196,76 +254,6 @@ body {
         opacity: 1;
         transform: translateY(0);
     }
-}
-
-/* Botones de secciones Paradoxia y Servicios */
-.contenedor.paradoxia section > ul,
-.contenedor.servicios section > ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-    list-style: none;
-    padding: 0;
-    margin: 40px 0;
-}
-
-.contenedor.paradoxia section > ul > li,
-.contenedor.servicios section > ul > li {
-    width: 320px;
-    background: #1e1e1e;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-}
-
-.contenedor.paradoxia section > ul > li:hover,
-.contenedor.servicios section > ul > li:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-}
-
-.contenedor.paradoxia section > ul > li h1,
-.contenedor.servicios section > ul > li h2 {
-    font-size: 22px;
-    text-align: center;
-    padding: 15px;
-    background: linear-gradient(45deg, #1abc9c, #16a085);
-    margin: 0;
-    color: #fff;
-}
-
-.contenedor.paradoxia section > ul > li p,
-.contenedor.servicios section > ul > li ul.texto {
-    padding: 20px;
-    font-size: 16px;
-    line-height: 1.5;
-    color: #ccc;
-}
-
-/* Íconos minimalistas */
-.contenedor.paradoxia section > ul > li::before,
-.contenedor.servicios section > ul > li::before {
-    content: '';
-    display: block;
-    height: 100px;
-    background: center / contain no-repeat;
-    margin: 20px auto 0;
-    width: 60px;
-}
-
-.contenedor.paradoxia section > ul > li.analisis::before {
-    background-image: url('/img/icon_analisis.png');
-}
-.contenedor.paradoxia section > ul > li.comunicacion::before {
-    background-image: url('/img/icon_comunicacion.png');
-}
-.contenedor.paradoxia section > ul > li.medicion::before {
-    background-image: url('/img/icon_medicion.png');
 }
 
 /* Casos */

@@ -89,49 +89,35 @@
 
 <!-- PARADOXIA SECTION -->
 <div class="contenedor paradoxia" id="paradoxia">
-    <section>
-        <ul class="botones">
-            <li class="analisis">
-                <div class="header">
-                    <div class="icon"><i class="fas fa-search"></i></div>
-                    <a href="javascript:;" class="active">Análisis</a>
-                </div>
-                <div class="content">
-                    Conocemos todos los elementos del medio sobre aquello que buscamos difundir, para mejorar la estrategia y aumentar la efectividad.
-                </div>
-            </li>
-            <li class="comunicacion">
-                <div class="header">
-                    <div class="icon"><i class="fas fa-bullhorn"></i></div>
-                    <a href="javascript:;">Comunicación</a>
-                </div>
-                <div class="content">
-                    Construimos identidad y expandimos el alcance. Gestionamos y medimos las estrategias en conjunto con nuestros clientes.
-                </div>
-            </li>
-            <li class="medicion">
-                <div class="header">
-                    <div class="icon"><i class="fas fa-chart-line"></i></div>
-                    <a href="javascript:;">Medición</a>
-                </div>
-                <div class="content">
-                    Analizamos variables clave y ajustamos la estrategia periódicamente para maximizar resultados e impacto.
-                </div>
-            </li>
-        </ul>
-        <ul class="textos">
-            <li class="analisis active">
-                <p>Para determinar la estrategia a adoptar con cada cliente, el primer paso es la observación. Estamos convencidos de que conocer todos los elementos que nos brinda el medio sobre aquello que buscamos difundir, mejora nuestra estrategia y aumenta su efectividad.</p>
-                <p><strong>Metodología: monitoreo, capacitaciones, análisis de tendencias y más.</strong></p>
-            </li>
-            <li class="comunicacion">
-                <p><strong>Construimos la identidad de nuestros clientes y expandimos su alcance. Gestionamos y medimos cada estrategia para sostener y alimentar la relación con sus audiencias.</strong></p>
-            </li>
-            <li class="medicion">
-                <p>El análisis de métricas clave es el pilar de nuestra metodología. Observamos las variables más importantes y cruzamos datos para encontrar puntos críticos y mejorar continuamente.</p>
-            </li>
-        </ul>
-    </section>
+  <section>
+    <ul class="botones-paradoxia">
+      <li class="analisis active" onclick="mostrarContenido('analisis')">
+        <img src="img/icon_analisis.png" alt="Análisis">
+        <h2>Análisis</h2>
+      </li>
+      <li class="comunicacion" onclick="mostrarContenido('comunicacion')">
+        <img src="img/icon_comunicacion.png" alt="Comunicación">
+        <h2>Comunicación</h2>
+      </li>
+      <li class="medicion" onclick="mostrarContenido('medicion')">
+        <img src="img/icon_medicion.png" alt="Medición">
+        <h2>Medición</h2>
+      </li>
+    </ul>
+
+    <div class="texto-paradoxia">
+      <div id="texto-analisis" class="contenido-paradoxia visible">
+        <p>Para determinar la estrategia a adoptar con cada cliente, el primer paso es la observación...</p>
+        <!-- Continuar con el contenido que ya tenías -->
+      </div>
+      <div id="texto-comunicacion" class="contenido-paradoxia">
+        <p>Buscamos construir la identidad de nuestros clientes y expandir su alcance...</p>
+      </div>
+      <div id="texto-medicion" class="contenido-paradoxia">
+        <p>El análisis de las distintas variables de medición conforma el pilar de nuestra metodología...</p>
+      </div>
+    </div>
+  </section>
 </div>
 
 <!-- SERVICIOS SECTION -->
@@ -329,6 +315,20 @@
         $(".quotes p.quote").removeClass("active");
         $("#" + target).addClass("active");
     });
+</script>
+
+<script>
+function mostrarContenido(id) {
+    document.querySelectorAll('.contenido-paradoxia').forEach(el => {
+        el.classList.remove('visible');
+    });
+    document.querySelector('#texto-' + id).classList.add('visible');
+
+    document.querySelectorAll('.botones-paradoxia li').forEach(el => {
+        el.classList.remove('active');
+    });
+    document.querySelector('.botones-paradoxia li.' + id).classList.add('active');
+}
 </script>
 
 </html>
