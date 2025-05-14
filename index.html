@@ -388,4 +388,10 @@ function mostrarContenido(id) {
     });
 </script>
 
+<script>
+  document.querySelectorAll('.contenedor.servicios .texto').forEach(div => {
+    div.innerHTML = div.textContent.split(',').map(p => p.trim()).join(',<br>');
+  });
+</script>
+
 </html>

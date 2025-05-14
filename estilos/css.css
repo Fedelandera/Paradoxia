@@ -295,8 +295,8 @@ body {
 .contenedor.servicios h2 {
     margin: 0;
     font-size: 18px;
-    border-bottom: 2px solid #00ffcc;
-    padding-bottom: 20px;
+    border-bottom: 2px #00ffcc;
+    padding-bottom: 30px;
     margin-bottom: 20px;
     white-space: normal;
     word-break: break-word;
@@ -308,8 +308,8 @@ body {
     position: relative;
     z-index: 2;
     padding: 15px 20px 30px;
-    font-size: 12px;
-    line-height: 1.6;
+    font-size: 10px;
+    line-height: 1;
 }
 
 /* Animaciones generales */
