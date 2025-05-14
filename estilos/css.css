@@ -247,8 +247,8 @@ body {
     background: transparent;
     border-radius: 12px;
     padding: 0;
-    width: 300px;
-    min-width: 300px;
+    width: 220px;
+    min-width: 220px;
     position: relative;
     transition: background-color 0.3s ease, transform 0.3s ease;
     color: white;
@@ -297,6 +297,10 @@ body {
     font-size: 18px;
     border-bottom: 1px solid currentColor;
     padding-bottom: 10px;
+    white-space: normal;
+    word-break: break-word;
+    text-align: center;
+    line-height: 1.2;
 }
 
 .contenedor.servicios .texto {
