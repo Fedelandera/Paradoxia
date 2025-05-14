@@ -295,8 +295,9 @@ body {
 .contenedor.servicios h2 {
     margin: 0;
     font-size: 18px;
-    border-bottom: 1px solid currentColor;
+    border-bottom: 2px solid #00ffcc;
     padding-bottom: 10px;
+    margin-bottom: 20px;
     white-space: normal;
     word-break: break-word;
     text-align: center;
