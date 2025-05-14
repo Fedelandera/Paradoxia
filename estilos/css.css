@@ -1,4 +1,4 @@
-/* Reset básico y configuración global */
+/* RESET Y GLOBAL */
 body {
     margin: 0;
     padding: 0;
@@ -7,7 +7,7 @@ body {
     background: #000;
 }
 
-/* Fondo galaxia como capa independiente */
+/* FONDO GALAXIA */
 .background-galaxia {
     position: absolute;
     top: 0;
@@ -19,7 +19,7 @@ body {
     z-index: 0;
 }
 
-/* Fondo para el home con partículas (sin fondo propio) */
+/* HOME CON PARTICULAS */
 .contenedor.home {
     position: relative;
     height: 100vh;
@@ -27,7 +27,6 @@ body {
     background: transparent;
 }
 
-/* Gradiente fade out en home */
 .contenedor.home::after {
     content: "";
     position: absolute;
@@ -38,7 +37,6 @@ body {
     z-index: 2;
 }
 
-/* Particles.js encima del fondo */
 #particles-js {
     position: absolute;
     width: 100%;
@@ -47,7 +45,6 @@ body {
     background: transparent !important;
 }
 
-/* Logo centrado */
 .logo-central {
     position: relative;
     z-index: 3;
@@ -61,7 +58,7 @@ body {
 }
 
 .logo-central img {
-    max-width: 2000px;
+    max-width: 800px;
     width: 90%;
     height: auto;
     display: block;
@@ -73,7 +70,7 @@ body {
     transform: scale(1.05);
 }
 
-/* MENU LATERAL */
+/* MENÚ LATERAL */
 .cd-nav-trigger {
     position: fixed;
     top: 30px;
@@ -155,7 +152,7 @@ body {
     color: #1abc9c;
 }
 
-/* Transición visual entre home y secciones */
+/* TRANSICIÓN SECCIONES */
 .transicion-seccion {
     width: 100%;
     height: 120px;
@@ -165,7 +162,7 @@ body {
     z-index: 2;
 }
 
-/* Contenedor Paradoxia (segunda sección) */
+/* PARADOXIA */
 .contenedor.paradoxia {
     background: #0b0e13;
     color: white;
@@ -175,14 +172,14 @@ body {
     z-index: 1;
 }
 
-/* Nueva estructura con íconos tipo pestaña */
+/* BOTONES PARADOXIA */
 .botones-paradoxia {
     display: flex;
     justify-content: center;
-    gap: 100px;
+    gap: 60px;
     list-style: none;
     padding: 0;
-    margin-bottom: 60px;
+    margin-bottom: 40px;
 }
 
 .botones-paradoxia li {
@@ -192,23 +189,22 @@ body {
     cursor: pointer;
     transition: transform 0.3s ease;
     opacity: 0.6;
-    padding: 10px;
 }
 
 .botones-paradoxia li.active,
 .botones-paradoxia li:hover {
-    transform: scale(1.15);
+    transform: scale(1.1);
     opacity: 1;
 }
 
 .botones-paradoxia li img {
-    width: 100px;
-    height: 100px;
-    margin-bottom: 16px;
+    width: 70px;
+    height: 70px;
+    margin-bottom: 12px;
 }
 
 .botones-paradoxia li h2 {
-    font-size: 22px;
+    font-size: 20px;
     margin: 0;
     color: #fff;
 }
@@ -217,7 +213,7 @@ body {
     text-align: center;
     max-width: 900px;
     margin: 0 auto;
-    font-size: 18px;
+    font-size: 16px;
     color: #ccc;
 }
 
@@ -228,6 +224,108 @@ body {
 
 .contenido-paradoxia.visible {
     display: block;
+}
+
+/* SERVICIOS */
+.contenedor.servicios {
+    background: #0b0e13;
+    padding: 80px 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.contenedor.servicios section > ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.contenedor.servicios section > ul > li {
+    width: 320px;
+    height: auto;
+    background-color: #1e1e1e;
+    border-radius: 16px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    overflow: hidden;
+    transition: all 0.4s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.contenedor.servicios section > ul > li:hover {
+    background-color: #ffffff;
+    color: #000;
+    transform: translateY(-10px);
+    z-index: 2;
+}
+
+.contenedor.servicios section > ul > li:hover .texto li {
+    color: #000;
+}
+
+.contenedor.servicios section > ul > li .boton {
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(45deg, #1abc9c, #16a085);
+    border-radius: 16px 16px 0 0;
+}
+
+.contenedor.servicios section > ul > li .boton h2 {
+    margin: 0;
+    font-size: 20px;
+    color: #fff;
+}
+
+.contenedor.servicios section > ul > li .texto {
+    padding: 20px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #ccc;
+}
+
+.contenedor.servicios section > ul > li .texto li {
+    margin-bottom: 8px;
+}
+
+/* PARTICULAS SOBRE SERVICIO */
+.contenedor.servicios section > ul > li .hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.contenedor.servicios section > ul > li:hover .hover {
+    opacity: 1;
+}
+
+/* PARTICLES.JS CONTENEDORES PARA CADA BLOQUE */
+#particles-js-1,
+#particles-js-2,
+#particles-js-3,
+#particles-js-4 {
+    width: 100%;
+    height: 100%;
+}
+
+/* ANIMACIÓN GENERAL */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @keyframes fadeIn {
@@ -241,90 +339,7 @@ body {
     }
 }
 
-/* Animación leve */
-.contenedor.paradoxia section {
-    animation: fadeInUp 1s ease-in-out;
-}
-
-@keyframes fadeInUp {
-    0% {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Casos */
-.contenedor.casos .container {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 40px 20px;
-    text-align: center;
-}
-
-.contenedor.casos h3 {
-    font-size: 28px;
-    margin-bottom: 30px;
-}
-
-.client-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    list-style: none;
-    padding: 0;
-}
-
-.client-list li {
-    width: 300px;
-    background: #1e1e1e;
-    padding: 20px;
-    border-radius: 12px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.client-list li:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-}
-
-.client-list strong {
-    font-size: 18px;
-    color: #fff;
-}
-
-.client-list .title {
-    font-size: 14px;
-    color: #ccc;
-}
-
-/* Contacto y pie */
-.contenedor.contacto section,
-.contenedor.bymood section {
-    text-align: center;
-    padding: 40px 20px;
-}
-
-.contenedor.contacto h3,
-.contenedor.contacto ul.datos {
-    color: #fff;
-}
-
-.contenedor.contacto ul.iconos li {
-    display: inline-block;
-    margin: 0 10px;
-}
-
-.contenedor.bymood {
-    background: #000;
-    padding: 10px;
-    text-align: center;
-}
-
+/* ENLACES */
 a {
     color: #1abc9c;
     text-decoration: none;

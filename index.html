@@ -131,6 +131,9 @@
     <section>
         <ul>
             <li class="redes_sociales">
+                <div class="hover gradient">
+                    <div id="particles-js-1"></div> <!-- o -2, -3, -4 según el bloque -->
+                </div>
                 <div class="header">
                     <div class="icon"><i class="fas fa-hashtag"></i></div>
                     <h2>Redes Sociales</h2>
@@ -140,6 +143,9 @@
                 </div>
             </li>
             <li class="com_gobierno">
+                <div class="hover gradient">
+                    <div id="particles-js-2"></div> <!-- o -2, -3, -4 según el bloque -->
+                </div>
                 <div class="header">
                     <div class="icon"><i class="fas fa-landmark"></i></div>
                     <h2>Comunicación de Gobierno</h2>
@@ -149,6 +155,9 @@
                 </div>
             </li>
             <li class="camp_electorales">
+                <div class="hover gradient">
+                    <div id="particles-js-3"></div> <!-- o -2, -3, -4 según el bloque -->
+                </div>
                 <div class="header">
                     <div class="icon"><i class="fas fa-vote-yea"></i></div>
                     <h2>Campañas Electorales</h2>
@@ -158,6 +167,9 @@
                 </div>
             </li>
             <li class="com_empresarial">
+                <div class="hover gradient">
+                    <div id="particles-js-4"></div> <!-- o -2, -3, -4 según el bloque -->
+                </div>
                 <div class="header">
                     <div class="icon"><i class="fas fa-briefcase"></i></div>
                     <h2>Comunicación Empresarial</h2>
@@ -335,6 +347,45 @@ function mostrarContenido(id) {
     });
     document.querySelector('.botones-paradoxia li.' + id).classList.add('active');
 }
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<script>
+    const serviciosParticles = ['particles-js-1', 'particles-js-2', 'particles-js-3', 'particles-js-4'];
+
+    const config = {
+        "particles": {
+            "number": { "value": 20 },
+            "color": { "value": "#ffffff" },
+            "shape": { "type": "circle" },
+            "opacity": { "value": 0.5 },
+            "size": { "value": 2 },
+            "line_linked": {
+                "enable": true,
+                "distance": 100,
+                "color": "#ffffff",
+                "opacity": 0.4,
+                "width": 1
+            },
+            "move": {
+                "enable": true,
+                "speed": 1,
+                "direction": "none",
+                "out_mode": "out"
+            }
+        },
+        "interactivity": {
+            "events": {
+                "onhover": { "enable": false },
+                "onclick": { "enable": false }
+            }
+        },
+        "retina_detect": true
+    };
+
+    serviciosParticles.forEach(id => {
+        particlesJS(id, config);
+    });
 </script>
 
 </html>
