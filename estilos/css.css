@@ -1,4 +1,4 @@
-/* RESET Y GLOBAL */
+/* Reset básico y configuración global */
 body {
     margin: 0;
     padding: 0;
@@ -7,7 +7,7 @@ body {
     background: #000;
 }
 
-/* FONDO GALAXIA */
+/* Fondo galaxia */
 .background-galaxia {
     position: absolute;
     top: 0;
@@ -19,14 +19,13 @@ body {
     z-index: 0;
 }
 
-/* HOME CON PARTICULAS */
+/* HOME */
 .contenedor.home {
     position: relative;
     height: 100vh;
     overflow: hidden;
     background: transparent;
 }
-
 .contenedor.home::after {
     content: "";
     position: absolute;
@@ -36,15 +35,12 @@ body {
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, #0b0e13 100%);
     z-index: 2;
 }
-
 #particles-js {
     position: absolute;
     width: 100%;
     height: 100%;
     z-index: 1;
-    background: transparent !important;
 }
-
 .logo-central {
     position: relative;
     z-index: 3;
@@ -54,18 +50,14 @@ body {
     justify-content: center;
     height: 100%;
     width: 100%;
-    text-align: center;
 }
-
 .logo-central img {
     max-width: 800px;
     width: 90%;
     height: auto;
-    display: block;
     margin: 0 auto;
     transition: transform 0.3s ease;
 }
-
 .logo-central img:hover {
     transform: scale(1.05);
 }
@@ -78,81 +70,46 @@ body {
     z-index: 999;
     display: flex;
     align-items: center;
-    text-decoration: none;
     color: #fff;
-    font-size: 16px;
 }
-
-.cd-nav-trigger span {
-    display: inline-block;
-    margin-left: 10px;
-}
-
 .cd-nav-icon {
     width: 30px;
     height: 3px;
     background: #fff;
     position: relative;
 }
-
-.cd-nav-icon::before,
-.cd-nav-icon::after {
+.cd-nav-icon::before, .cd-nav-icon::after {
     content: '';
     width: 30px;
     height: 3px;
     background: #fff;
     position: absolute;
     left: 0;
-    transition: all 0.3s;
 }
-
-.cd-nav-icon::before {
-    top: -8px;
-}
-
-.cd-nav-icon::after {
-    top: 8px;
-}
-
-.cd-nav {
-    display: none;
-}
-
+.cd-nav-icon::before { top: -8px; }
+.cd-nav-icon::after { top: 8px; }
+.cd-nav { display: none; }
 .cd-nav.active {
     display: block;
     position: fixed;
-    top: 0;
-    left: 0;
+    top: 0; left: 0;
     background: rgba(0, 0, 0, 0.95);
     width: 100%;
     height: 100%;
     z-index: 998;
     padding: 100px 20px;
 }
-
-.cd-nav .links {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    text-align: center;
-}
-
-.cd-nav .links li {
-    margin: 20px 0;
-}
-
+.cd-nav .links { list-style: none; text-align: center; padding: 0; }
+.cd-nav .links li { margin: 20px 0; }
 .cd-nav .links li a {
     color: #fff;
     text-decoration: none;
     font-size: 24px;
     transition: color 0.3s;
 }
+.cd-nav .links li a:hover { color: #1abc9c; }
 
-.cd-nav .links li a:hover {
-    color: #1abc9c;
-}
-
-/* TRANSICIÓN SECCIONES */
+/* TRANSICIÓN */
 .transicion-seccion {
     width: 100%;
     height: 120px;
@@ -171,8 +128,6 @@ body {
     position: relative;
     z-index: 1;
 }
-
-/* BOTONES PARADOXIA */
 .botones-paradoxia {
     display: flex;
     justify-content: center;
@@ -181,7 +136,6 @@ body {
     padding: 0;
     margin-bottom: 40px;
 }
-
 .botones-paradoxia li {
     display: flex;
     flex-direction: column;
@@ -190,25 +144,21 @@ body {
     transition: transform 0.3s ease;
     opacity: 0.6;
 }
-
 .botones-paradoxia li.active,
 .botones-paradoxia li:hover {
     transform: scale(1.1);
     opacity: 1;
 }
-
 .botones-paradoxia li img {
-    width: 70px;
-    height: 70px;
-    margin-bottom: 12px;
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
 }
-
 .botones-paradoxia li h2 {
-    font-size: 20px;
+    font-size: 18px;
     margin: 0;
     color: #fff;
 }
-
 .texto-paradoxia {
     text-align: center;
     max-width: 900px;
@@ -216,135 +166,73 @@ body {
     font-size: 16px;
     color: #ccc;
 }
-
 .contenido-paradoxia {
     display: none;
     animation: fadeIn 0.5s ease;
 }
-
 .contenido-paradoxia.visible {
     display: block;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 /* SERVICIOS */
 .contenedor.servicios {
     background: #0b0e13;
-    padding: 80px 20px;
-    position: relative;
-    z-index: 1;
+    color: white;
+    padding: 60px 20px;
 }
-
-.contenedor.servicios section > ul {
+.servicio {
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    justify-content: space-around;
     gap: 30px;
-    list-style: none;
-    padding: 0;
-    margin: 0;
+    flex-wrap: wrap;
+    margin-top: 40px;
 }
-
-.contenedor.servicios section > ul > li {
-    width: 320px;
-    height: auto;
-    background-color: #1e1e1e;
-    border-radius: 16px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.3);
-    overflow: hidden;
-    transition: all 0.4s ease;
-    position: relative;
-    z-index: 1;
-}
-
-.contenedor.servicios section > ul > li:hover {
-    background-color: #ffffff;
-    color: #000;
-    transform: translateY(-10px);
-    z-index: 2;
-}
-
-.contenedor.servicios section > ul > li:hover .texto li {
-    color: #000;
-}
-
-.contenedor.servicios section > ul > li .boton {
+.tarjeta-servicio {
+    width: 22%;
+    background: #1e1e1e;
+    border-radius: 12px;
+    padding: 20px;
     text-align: center;
-    padding: 20px;
-    background: linear-gradient(45deg, #1abc9c, #16a085);
-    border-radius: 16px 16px 0 0;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
 }
-
-.contenedor.servicios section > ul > li .boton h2 {
-    margin: 0;
-    font-size: 20px;
-    color: #fff;
+.tarjeta-servicio:hover {
+    background: #fff;
+    color: #000;
 }
-
-.contenedor.servicios section > ul > li .texto {
-    padding: 20px;
+.tarjeta-servicio h3 {
+    margin: 10px 0;
+    font-size: 18px;
+    border-bottom: 1px solid #999;
+    padding-bottom: 10px;
+}
+.tarjeta-servicio p {
     font-size: 14px;
-    line-height: 1.6;
-    color: #ccc;
+    color: inherit;
 }
 
-.contenedor.servicios section > ul > li .texto li {
-    margin-bottom: 8px;
-}
-
-/* PARTICULAS SOBRE SERVICIO */
-.contenedor.servicios section > ul > li .hover {
+/* PARTICULAS OPCIONAL */
+.tarjeta-servicio .particles {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
     z-index: 0;
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.3s;
 }
-
-.contenedor.servicios section > ul > li:hover .hover {
+.tarjeta-servicio:hover .particles {
     opacity: 1;
 }
-
-/* PARTICLES.JS CONTENEDORES PARA CADA BLOQUE */
-#particles-js-1,
-#particles-js-2,
-#particles-js-3,
-#particles-js-4 {
-    width: 100%;
-    height: 100%;
+.tarjeta-servicio .contenido {
+    position: relative;
+    z-index: 1;
 }
 
-/* ANIMACIÓN GENERAL */
-@keyframes fadeInUp {
-    0% {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* ENLACES */
-a {
-    color: #1abc9c;
-    text-decoration: none;
-}
-
-a:hover {
-    color: #16a085;
-}
+/* GENÉRICOS */
+a { color: #1abc9c; text-decoration: none; }
+a:hover { color: #16a085; }
