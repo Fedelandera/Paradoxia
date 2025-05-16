@@ -1,0 +1,160 @@
+/* Reset y base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: #000;
+    color: #fff;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Fondo galáctico */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../img/fondo_galaxia.png') no-repeat center center;
+    background-size: cover;
+    z-index: -2;
+    opacity: 0.6;
+}
+
+/* Fondo de partículas */
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Encabezado con video */
+header {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+header video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    z-index: -3;
+    opacity: 0.6;
+}
+
+header .contenido {
+    z-index: 1;
+    color: white;
+    max-width: 800px;
+    padding: 20px;
+    backdrop-filter: blur(5px);
+}
+
+header .contenido h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+header .contenido p {
+    font-size: 18px;
+    color: #ddd;
+}
+
+/* Secciones */
+section {
+    padding: 80px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Bloques de contenido */
+.bloque {
+    margin-bottom: 60px;
+}
+
+.bloque h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #1abc9c;
+}
+
+.bloque p {
+    font-size: 18px;
+    color: #ccc;
+}
+
+/* Línea divisoria sutil */
+hr {
+    border: none;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #1abc9c, transparent);
+    margin: 40px auto;
+    width: 80%;
+}
+
+/* Servicios */
+.servicios {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.servicio {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 30px;
+    flex: 1 1 300px;
+    max-width: 400px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.servicio:hover {
+    background: white;
+    color: black;
+    transform: translateY(-10px);
+}
+
+.servicio h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #1abc9c;
+    padding-bottom: 5px;
+}
+
+.servicio p {
+    font-size: 16px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    header .contenido h1 {
+        font-size: 36px;
+    }
+
+    .servicios {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .servicio {
+        max-width: 90%;
+    }
+}
