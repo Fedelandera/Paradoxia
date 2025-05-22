@@ -172,20 +172,29 @@
 
 <!-- CASOS SECTION -->
 <div class="contenedor casos" id="casos">
-    <section>
+    <section class="casos-carousel">
         <h3>Casos de Éxito</h3>
-        <div class="quotes-wrapper">
-            <div class="quotes">
-                <p class="quote active" id="quote1">“Paradoxia nos ayudó a transformar nuestra comunicación digital y alcanzar nuevos niveles de engagement.”</p>
-                <p class="quote" id="quote2">“Gracias a Paradoxia, logramos establecer una estrategia digital clara y efectiva para nuestro gobierno local.”</p>
-                <p class="quote" id="quote3">“Excelente equipo, comprometido y con resultados comprobables en poco tiempo.”</p>
+        <div class="carousel-wrapper">
+            <button class="carousel-btn prev" onclick="moverSlide(-1)">‹</button>
+            <div class="carousel-slides">
+                <div class="slide active">
+                    <img src="img/cliente1.jpg" alt="Cliente 1">
+                    <h4>Damián Szvalb</h4>
+                    <p>Impulsamos la estrategia digital de Provincia Net, logrando una comunidad activa y efectiva.</p>
+                </div>
+                <div class="slide">
+                    <img src="img/cliente2.jpg" alt="Cliente 2">
+                    <h4>Alejandra Martínez</h4>
+                    <p>Transformamos las redes sociales de Edesur, logrando una comunicación más humana y cercana.</p>
+                </div>
+                <div class="slide">
+                    <img src="img/cliente3.jpg" alt="Cliente 3">
+                    <h4>Fernando Cotillo</h4>
+                    <p>Ayudamos a construir el vínculo digital con los ciudadanos en Santa Cruz.</p>
+                </div>
             </div>
+            <button class="carousel-btn next" onclick="moverSlide(1)">›</button>
         </div>
-        <ul class="client-list">
-            <li data-class="quote1" class="quote1 active"><strong>Damián Szvalb</strong><br><span>Provincia Net</span></li>
-            <li data-class="quote2" class="quote2"><strong>Alejandra Martínez</strong><br><span>Edesur</span></li>
-            <li data-class="quote3" class="quote3"><strong>Fernando Cotillo</strong><br><span>Gobierno de Santa Cruz</span></li>
-        </ul>
     </section>
 </div>
 
@@ -240,6 +249,29 @@
         </ul>
     </section>
 </div>
+
+<script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+
+    function mostrarSlide(index) {
+        slides.forEach((slide, i) => {
+            slide.classList.remove('active');
+            if (i === index) slide.classList.add('active');
+        });
+    }
+
+    function moverSlide(direccion) {
+        currentSlide += direccion;
+        if (currentSlide < 0) currentSlide = slides.length - 1;
+        if (currentSlide >= slides.length) currentSlide = 0;
+        mostrarSlide(currentSlide);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        mostrarSlide(currentSlide);
+    });
+</script>
 
 </body>
 
